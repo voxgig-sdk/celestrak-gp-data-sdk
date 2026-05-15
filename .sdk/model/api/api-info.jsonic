@@ -1,0 +1,29 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        name: "CelesTrak"
+        url: "https://celestrak.org"
+      }
+      description: "CelesTrak provides access to General Perturbations (GP) orbital data, including Two-Line Element Sets (TLEs) and newer formats like XML and JSON. This data is crucial for tracking objects in space and supports various queries to retrieve specific orbital information based on catalog numbers, designators, and names."
+      license: {
+        name: "CelesTrak Terms of Use"
+        url: "https://celestrak.org/NORAD/documentation/gp-data-formats.php"
+      }
+      servers: [
+        {
+          description: "CelesTrak Production Server"
+          url: "https://celestrak.org"
+        }
+      ]
+      termsOfService: "https://celestrak.org/NORAD/documentation/gp-data-formats.php"
+      title: "CelesTrak GP Data"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

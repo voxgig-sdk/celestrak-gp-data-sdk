@@ -1,0 +1,86 @@
+{
+  "existing": {
+    "gpn": {
+      "GPN00": {
+        "arg_of_pericenter": 170,
+        "bstar": 171,
+        "classification_type": "sac",
+        "eccentricity": 173,
+        "element_set_no": "sae",
+        "ephemeris_type": "saf",
+        "epoch": "sb0",
+        "inclination": 177,
+        "mean_anomaly": 178,
+        "mean_motion": 179,
+        "mean_motion_ddot": 180,
+        "mean_motion_dot": 181,
+        "norad_cat_id": "NORAD_CAT01",
+        "object_id": "OBJECT01",
+        "object_name": "sb8",
+        "ra_of_asc_node": 185,
+        "rev_at_epoch": "sba"
+      },
+      "GPN01": {
+        "arg_of_pericenter": 340,
+        "bstar": 341,
+        "classification_type": "s156",
+        "eccentricity": 343,
+        "element_set_no": "s158",
+        "ephemeris_type": "s159",
+        "epoch": "s15a",
+        "inclination": 347,
+        "mean_anomaly": 348,
+        "mean_motion": 349,
+        "mean_motion_ddot": 350,
+        "mean_motion_dot": 351,
+        "norad_cat_id": "NORAD_CAT01",
+        "object_id": "OBJECT01",
+        "object_name": "s162",
+        "ra_of_asc_node": 355,
+        "rev_at_epoch": "s164"
+      },
+      "GPN02": {
+        "arg_of_pericenter": 510,
+        "bstar": 511,
+        "classification_type": "s200",
+        "eccentricity": 513,
+        "element_set_no": "s202",
+        "ephemeris_type": "s203",
+        "epoch": "s204",
+        "inclination": 517,
+        "mean_anomaly": 518,
+        "mean_motion": 519,
+        "mean_motion_ddot": 520,
+        "mean_motion_dot": 521,
+        "norad_cat_id": "NORAD_CAT01",
+        "object_id": "OBJECT01",
+        "object_name": "s20c",
+        "ra_of_asc_node": 525,
+        "rev_at_epoch": "s20e"
+      }
+    }
+  },
+  "new": {
+    "gpn": {
+      "gpn_ref01": {
+        "arg_of_pericenter": 680,
+        "bstar": 681,
+        "classification_type": "s2aa",
+        "eccentricity": 683,
+        "element_set_no": "s2ac",
+        "ephemeris_type": "s2ad",
+        "epoch": "s2ae",
+        "inclination": 687,
+        "mean_anomaly": 688,
+        "mean_motion": 689,
+        "mean_motion_ddot": 690,
+        "mean_motion_dot": 691,
+        "norad_cat_id": "NORAD_CAT01",
+        "object_id": "OBJECT01",
+        "object_name": "s2b6",
+        "ra_of_asc_node": 695,
+        "rev_at_epoch": "s2b8"
+      }
+    }
+  }
+}

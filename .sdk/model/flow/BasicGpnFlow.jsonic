@@ -1,0 +1,22 @@
+# BasicGpnFlow
+
+main: kit: flow: BasicGpnFlow:
+{
+  entity: "gpn",
+  kind: "basic",
+  name: "BasicGpnFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "gpn_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicGpnFlow"
+}

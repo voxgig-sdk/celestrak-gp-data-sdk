@@ -1,0 +1,172 @@
+# Entity: gpn
+
+main: kit: entity: gpn: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "arg_of_pericenter"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "bstar"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "classification_type"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "eccentricity"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "element_set_no"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "ephemeris_type"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "epoch"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "inclination"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "mean_anomaly"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "mean_motion"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "mean_motion_ddot"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "mean_motion_dot"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "norad_cat_id"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "object_id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "object_name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "ra_of_asc_node"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "rev_at_epoch"
+      req: false
+      type: "`$INTEGER`"
+    }
+  ]
+
+  name: "gpn"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                example: "25544"
+                kind: "query"
+                name: "catnr"
+                orig: "catnr"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: "json"
+                kind: "query"
+                name: "format"
+                orig: "format"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: "stations"
+                kind: "query"
+                name: "group"
+                orig: "group"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: "1998-067A"
+                kind: "query"
+                name: "intde"
+                orig: "intde"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: "ISS"
+                kind: "query"
+                name: "name"
+                orig: "name"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/NORAD/elements/gp.php"
+          parts: [
+            "NORAD"
+            "elements"
+            "gp.php"
+          ]
+          select: {
+            exist: [
+              "catnr"
+              "format"
+              "group"
+              "intde"
+              "name"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,372 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "CelesTrak GP Data",
+    "description": "CelesTrak provides access to General Perturbations (GP) orbital data, including Two-Line Element Sets (TLEs) and newer formats like XML and JSON. This data is crucial for tracking objects in space and supports various queries to retrieve specific orbital information based on catalog numbers, designators, and names.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "CelesTrak",
+      "url": "https://celestrak.org"
+    },
+    "termsOfService": "https://celestrak.org/NORAD/documentation/gp-data-formats.php",
+    "license": {
+      "name": "CelesTrak Terms of Use",
+      "url": "https://celestrak.org/NORAD/documentation/gp-data-formats.php"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://celestrak.org",
+      "description": "CelesTrak Production Server"
+    }
+  ],
+  "paths": {
+    "/NORAD/elements/gp.php": {
+      "get": {
+        "summary": "Get General Perturbations (GP) Orbital Data",
+        "description": "Retrieve GP orbital data including Two-Line Element Sets (TLEs) and other formats for space objects. Data can be queried by catalog number, international designator, or object name.",
+        "operationId": "getGPData",
+        "tags": [
+          "GP Data"
+        ],
+        "parameters": [
+          {
+            "name": "CATNR",
+            "in": "query",
+            "description": "NORAD catalog number(s) for the space object(s). Multiple catalog numbers can be specified.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "25544"
+          },
+          {
+            "name": "INTDES",
+            "in": "query",
+            "description": "International designator(s) for the space object(s). Format: YYYY-NNNP where YYYY is year, NNN is launch number, and P is piece.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "1998-067A"
+          },
+          {
+            "name": "NAME",
+            "in": "query",
+            "description": "Name(s) of the space object(s) to retrieve orbital data for.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "ISS"
+          },
+          {
+            "name": "GROUP",
+            "in": "query",
+            "description": "Predefined group name to retrieve orbital data for multiple objects in a category (e.g., 'stations', 'visual', 'active', 'analyst', 'weather', 'noaa', 'goes', 'resource', 'sarsat', 'dmc', 'tdrss', 'argos', 'planet', 'spire', 'geo', 'intelsat', 'ses', 'iridium', 'iridium-NEXT', 'starlink', 'orbcomm', 'globalstar', 'amateur', 'x-comm', 'other-comm', 'gorizont', 'raduga', 'molniya', 'gnss', 'gps-ops', 'glo-ops', 'galileo', 'beidou', 'sbas', 'nnss', 'musson', 'science', 'geodetic', 'engineering', 'education', 'military', 'radar', 'cubesat', 'other').",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "stations",
+                "visual",
+                "active",
+                "analyst",
+                "weather",
+                "noaa",
+                "goes",
+                "resource",
+                "sarsat",
+                "dmc",
+                "tdrss",
+                "argos",
+                "planet",
+                "spire",
+                "geo",
+                "intelsat",
+                "ses",
+                "iridium",
+                "iridium-NEXT",
+                "starlink",
+                "orbcomm",
+                "globalstar",
+                "amateur",
+                "x-comm",
+                "other-comm",
+                "gorizont",
+                "raduga",
+                "molniya",
+                "gnss",
+                "gps-ops",
+                "glo-ops",
+                "galileo",
+                "beidou",
+                "sbas",
+                "nnss",
+                "musson",
+                "science",
+                "geodetic",
+                "engineering",
+                "education",
+                "military",
+                "radar",
+                "cubesat",
+                "other"
+              ]
+            },
+            "example": "stations"
+          },
+          {
+            "name": "FORMAT",
+            "in": "query",
+            "description": "Output format for the orbital data. TLE is the traditional Two-Line Element format, 3LE includes the object name, XML provides structured XML output, JSON provides JSON output, CSV provides comma-separated values, and KVN provides Consultative Committee for Space Data Systems (CCSDS) Key-Value Notation format.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "tle",
+                "3le",
+                "xml",
+                "json",
+                "csv",
+                "kvn"
+              ],
+              "default": "tle"
+            },
+            "example": "json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with GP orbital data",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "description": "TLE or 3LE formatted orbital data"
+                },
+                "example": "ISS (ZARYA)\n1 25544U 98067A   24001.50000000  .00012345  00000-0  12345-3 0  9999\n2 25544  51.6400 123.4567 0001234  12.3456 123.4567 15.12345678123456"
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "xml": {
+                    "name": "ndm"
+                  },
+                  "properties": {
+                    "omm": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "OBJECT_NAME": {
+                            "type": "string"
+                          },
+                          "OBJECT_ID": {
+                            "type": "string"
+                          },
+                          "EPOCH": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "MEAN_MOTION": {
+                            "type": "number"
+                          },
+                          "ECCENTRICITY": {
+                            "type": "number"
+                          },
+                          "INCLINATION": {
+                            "type": "number"
+                          },
+                          "RA_OF_ASC_NODE": {
+                            "type": "number"
+                          },
+                          "ARG_OF_PERICENTER": {
+                            "type": "number"
+                          },
+                          "MEAN_ANOMALY": {
+                            "type": "number"
+                          },
+                          "NORAD_CAT_ID": {
+                            "type": "string"
+                          },
+                          "CLASSIFICATION_TYPE": {
+                            "type": "string"
+                          },
+                          "ELEMENT_SET_NO": {
+                            "type": "string"
+                          },
+                          "REV_AT_EPOCH": {
+                            "type": "integer"
+                          },
+                          "BSTAR": {
+                            "type": "number"
+                          },
+                          "MEAN_MOTION_DOT": {
+                            "type": "number"
+                          },
+                          "MEAN_MOTION_DDOT": {
+                            "type": "number"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "OBJECT_NAME": {
+                        "type": "string",
+                        "description": "Name of the space object"
+                      },
+                      "OBJECT_ID": {
+                        "type": "string",
+                        "description": "International designator"
+                      },
+                      "EPOCH": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "Epoch time of the orbital elements"
+                      },
+                      "MEAN_MOTION": {
+                        "type": "number",
+                        "description": "Mean motion in revolutions per day"
+                      },
+                      "ECCENTRICITY": {
+                        "type": "number",
+                        "description": "Orbital eccentricity"
+                      },
+                      "INCLINATION": {
+                        "type": "number",
+                        "description": "Inclination in degrees"
+                      },
+                      "RA_OF_ASC_NODE": {
+                        "type": "number",
+                        "description": "Right ascension of ascending node in degrees"
+                      },
+                      "ARG_OF_PERICENTER": {
+                        "type": "number",
+                        "description": "Argument of perigee in degrees"
+                      },
+                      "MEAN_ANOMALY": {
+                        "type": "number",
+                        "description": "Mean anomaly in degrees"
+                      },
+                      "EPHEMERIS_TYPE": {
+                        "type": "integer",
+                        "description": "Ephemeris type"
+                      },
+                      "CLASSIFICATION_TYPE": {
+                        "type": "string",
+                        "description": "Classification (U=Unclassified, C=Classified, S=Secret)"
+                      },
+                      "NORAD_CAT_ID": {
+                        "type": "integer",
+                        "description": "NORAD catalog number"
+                      },
+                      "ELEMENT_SET_NO": {
+                        "type": "integer",
+                        "description": "Element set number"
+                      },
+                      "REV_AT_EPOCH": {
+                        "type": "integer",
+                        "description": "Revolution number at epoch"
+                      },
+                      "BSTAR": {
+                        "type": "number",
+                        "description": "BSTAR drag term"
+                      },
+                      "MEAN_MOTION_DOT": {
+                        "type": "number",
+                        "description": "First derivative of mean motion"
+                      },
+                      "MEAN_MOTION_DDOT": {
+                        "type": "number",
+                        "description": "Second derivative of mean motion"
+                      }
+                    }
+                  }
+                },
+                "example": [
+                  {
+                    "OBJECT_NAME": "ISS (ZARYA)",
+                    "OBJECT_ID": "1998-067A",
+                    "EPOCH": "2024-01-01T12:00:00.000000",
+                    "MEAN_MOTION": 15.50103472,
+                    "ECCENTRICITY": 0.0001234,
+                    "INCLINATION": 51.64,
+                    "RA_OF_ASC_NODE": 123.4567,
+                    "ARG_OF_PERICENTER": 12.3456,
+                    "MEAN_ANOMALY": 123.4567,
+                    "EPHEMERIS_TYPE": 0,
+                    "CLASSIFICATION_TYPE": "U",
+                    "NORAD_CAT_ID": 25544,
+                    "ELEMENT_SET_NO": 999,
+                    "REV_AT_EPOCH": 12345,
+                    "BSTAR": 0.000012345,
+                    "MEAN_MOTION_DOT": 0.00012345,
+                    "MEAN_MOTION_DDOT": 0
+                  }
+                ]
+              },
+              "text/csv": {
+                "schema": {
+                  "type": "string",
+                  "description": "CSV formatted orbital data"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - Invalid parameters provided",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "example": "Invalid query parameters"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found - No data found for the specified query",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "example": "No data found for the specified object"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "example": "Internal server error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "GP Data",
+      "description": "General Perturbations orbital data retrieval operations"
+    }
+  ],
+  "externalDocs": {
+    "description": "CelesTrak GP Data Formats Documentation",
+    "url": "https://celestrak.org/NORAD/documentation/gp-data-formats.php"
+  }
+}
