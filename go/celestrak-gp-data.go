@@ -1,10 +1,10 @@
 package voxgigcelestrakgpdatasdk
 
 import (
-	"github.com/voxgig-sdk/celestrak-gp-data-sdk/core"
-	"github.com/voxgig-sdk/celestrak-gp-data-sdk/entity"
-	"github.com/voxgig-sdk/celestrak-gp-data-sdk/feature"
-	_ "github.com/voxgig-sdk/celestrak-gp-data-sdk/utility"
+	"github.com/voxgig-sdk/celestrak-gp-data-sdk/go/core"
+	"github.com/voxgig-sdk/celestrak-gp-data-sdk/go/entity"
+	"github.com/voxgig-sdk/celestrak-gp-data-sdk/go/feature"
+	_ "github.com/voxgig-sdk/celestrak-gp-data-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

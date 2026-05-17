@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/celestrak-gp-data-sdk"
-	"github.com/voxgig-sdk/celestrak-gp-data-sdk/core"
+	sdk "github.com/voxgig-sdk/celestrak-gp-data-sdk/go"
+	"github.com/voxgig-sdk/celestrak-gp-data-sdk/go/core"
 )
 
 func TestGpnDirect(t *testing.T) {

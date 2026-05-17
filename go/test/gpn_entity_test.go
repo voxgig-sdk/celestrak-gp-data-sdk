@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/celestrak-gp-data-sdk"
-	"github.com/voxgig-sdk/celestrak-gp-data-sdk/core"
+	sdk "github.com/voxgig-sdk/celestrak-gp-data-sdk/go"
+	"github.com/voxgig-sdk/celestrak-gp-data-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/celestrak-gp-data-sdk/go/utility/struct"
 )
 
 func TestGpnEntity(t *testing.T) {
