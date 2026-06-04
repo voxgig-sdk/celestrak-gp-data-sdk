@@ -62,14 +62,12 @@ def gpn_direct_setup(mockres)
   env = Runner.env_override({
     "CELESTRAKGPDATA_TEST_GPN_ENTID" => {},
     "CELESTRAKGPDATA_TEST_LIVE" => "FALSE",
-    "CELESTRAKGPDATA_APIKEY" => "NONE",
   })
 
   live = env["CELESTRAKGPDATA_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {
-      "apikey" => env["CELESTRAKGPDATA_APIKEY"],
     }
     client = CelestrakGpDataSDK.new(merged_opts)
     return {

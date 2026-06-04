@@ -119,7 +119,6 @@ func gpnBasicSetup(extra map[string]any) *entityTestSetup {
 		"CELESTRAKGPDATA_TEST_GPN_ENTID": idmap,
 		"CELESTRAKGPDATA_TEST_LIVE":      "FALSE",
 		"CELESTRAKGPDATA_TEST_EXPLAIN":   "FALSE",
-		"CELESTRAKGPDATA_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["CELESTRAKGPDATA_TEST_GPN_ENTID"])
@@ -130,7 +129,6 @@ func gpnBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["CELESTRAKGPDATA_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["CELESTRAKGPDATA_APIKEY"],
 			},
 			extra,
 		})

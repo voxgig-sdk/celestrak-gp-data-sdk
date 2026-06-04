@@ -23,12 +23,9 @@ loading a specific record.
 ### 1. Create a client
 
 ```python
-import os
 from celestrakgpdata_sdk import CelestrakGpDataSDK
 
-client = CelestrakGpDataSDK({
-    "apikey": os.environ.get("CELESTRAK-GP-DATA_APIKEY"),
-})
+client = CelestrakGpDataSDK({})
 ```
 
 ### 2. List gpns
@@ -121,7 +118,6 @@ Create a `.env.local` file at the project root:
 
 ```
 CELESTRAK-GP-DATA_TEST_LIVE=TRUE
-CELESTRAK-GP-DATA_APIKEY=<your-key>
 ```
 
 Then run:
@@ -145,7 +141,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `str` | API key for authentication. |
 | `base` | `str` | Base URL of the API server. |
 | `prefix` | `str` | URL path prefix prepended to all requests. |
 | `suffix` | `str` | URL path suffix appended to all requests. |

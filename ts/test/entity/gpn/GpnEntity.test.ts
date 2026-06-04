@@ -113,7 +113,6 @@ function basicSetup(extra?: any) {
     'CELESTRAK_GP_DATA_TEST_GPN_ENTID': idmap,
     'CELESTRAK_GP_DATA_TEST_LIVE': 'FALSE',
     'CELESTRAK_GP_DATA_TEST_EXPLAIN': 'FALSE',
-    'CELESTRAK_GP_DATA_APIKEY': 'NONE',
   })
 
   idmap = env['CELESTRAK_GP_DATA_TEST_GPN_ENTID']
@@ -123,7 +122,6 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new CelestrakGpDataSDK(merge([
       {
-        apikey: env.CELESTRAK_GP_DATA_APIKEY,
       },
       extra
     ]))

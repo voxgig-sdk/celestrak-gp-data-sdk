@@ -15,9 +15,6 @@ module CelestrakGpDataConfig
       },
       "options" => {
         "base" => "https://celestrak.org",
-        "auth" => {
-          "prefix" => "Bearer",
-        },
         "headers" => {
           "content-type" => "application/json",
         },
