@@ -10,7 +10,7 @@ The Python SDK for the CelestrakGpData API — an entity-oriented client followi
 
 ## Install
 ```bash
-pip install celestrak-gp-data-sdk
+pip install voxgig-sdk-celestrak-gp-data
 ```
 
 Or install from source:

@@ -10,13 +10,13 @@ The Ruby SDK for the CelestrakGpData API — an entity-oriented client using idi
 
 ## Install
 ```bash
-gem install celestrak-gp-data-sdk
+gem install voxgig-sdk-celestrak-gp-data
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "celestrak-gp-data-sdk"
+gem "voxgig-sdk-celestrak-gp-data"
 ```
 
 Then run:

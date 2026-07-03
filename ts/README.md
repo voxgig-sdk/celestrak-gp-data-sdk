@@ -10,7 +10,7 @@ The TypeScript SDK for the CelestrakGpData API — a type-safe, entity-oriented 
 
 ## Install
 ```bash
-npm install celestrak-gp-data
+npm install @voxgig-sdk/celestrak-gp-data
 ```
 ## Tutorial: your first API call
 

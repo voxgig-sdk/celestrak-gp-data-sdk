@@ -10,7 +10,7 @@ The Lua SDK for the CelestrakGpData API — an entity-oriented client using Lua 
 
 ## Install
 ```bash
-luarocks install celestrak-gp-data-sdk
+luarocks install voxgig-sdk-celestrak-gp-data
 ```
 
 If the module is not yet published, add the source directory to
