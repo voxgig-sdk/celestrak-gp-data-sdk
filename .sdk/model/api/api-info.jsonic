@@ -22,28 +22,7 @@ main: {
       termsOfService: "https://celestrak.org/NORAD/documentation/gp-data-formats.php"
       title: "CelesTrak GP Data"
       version: "1.0.0"
-      tagline: "Query CelesTrak's General Perturbations orbital element sets for satellites and space debris"
-      homepage: "https://celestrak.org"
-      docs_url: "https://celestrak.org/NORAD/documentation/gp-data-formats.php"
-      license_short: "CelesTrak Terms of Use — free to use with attribution; redistribution and commercial reuse have conditions."
-      license_md: `- Governed by the [CelesTrak Terms of Use](https://celestrak.org/publications/disclaimer.php).
-- Underlying GP element sets are derived from US Space Force data, redistributed by CelesTrak (operated by [Dr. T.S. Kelso](https://celestrak.org)).
-- Attribution to CelesTrak is expected when the data is republished.
-- No warranty of fitness; CelesTrak does not guarantee accuracy for operational decisions.`
-      about_md: `[CelesTrak](https://celestrak.org) is a long-running independent service maintained by Dr. T.S. Kelso that publishes orbital element data for objects tracked by the US Space Force's Space Surveillance Network. The GP (General Perturbations) data service is its modern HTTP query interface for retrieving current element sets.
-
-What you get from the API:
-
-- Two-Line Element Sets (TLE) and the legacy 3-line variant (\`2LE\`) suitable for SGP4 propagators.
-- Orbital Mean-Elements Messages (OMM) in \`XML\`, \`KVN\`, \`JSON\`, \`JSON-PRETTY\`, and \`CSV\` per CCSDS recommendations.
-- Queries by NORAD catalog number (\`CATNR\`), International Designator (\`INTDES\`), satellite name (\`NAME\`), or a curated group (\`GROUP\`, e.g. \`starlink\`, \`stations\`, \`active\`).
-- Special data sets via \`SPECIAL\` for supplemental or operator-supplied elements.
-
-The endpoint typically used is \`https://celestrak.org/NORAD/elements/gp.php\` with \`FORMAT=\` selecting the output encoding. CORS is not enabled, so browser clients usually proxy requests. Data is refreshed continuously; CelesTrak asks consumers not to poll faster than the underlying TLE update cadence (a few hours).`
-      entity_desc: {
-        gpn: "General Perturbations element sets for tracked space objects, retrieved from `GET /NORAD/elements/gp.php` with query parameters such as `CATNR`, `INTDES`, `GROUP`, `NAME`, or `SPECIAL` and a `FORMAT` of TLE, 2LE, XML, KVN, JSON, JSON-PRETTY, or CSV."
-      }
-      auth: false
     }
   }
 }
+

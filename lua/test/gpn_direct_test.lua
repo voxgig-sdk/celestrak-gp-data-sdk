@@ -63,12 +63,14 @@ function gpn_direct_setup(mockres)
   local env = runner.env_override({
     ["CELESTRAKGPDATA_TEST_GPN_ENTID"] = {},
     ["CELESTRAKGPDATA_TEST_LIVE"] = "FALSE",
+    ["CELESTRAKGPDATA_APIKEY"] = "NONE",
   })
 
   local live = env["CELESTRAKGPDATA_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
+      apikey = env["CELESTRAKGPDATA_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

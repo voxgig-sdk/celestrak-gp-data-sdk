@@ -79,12 +79,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'CELESTRAKGPDATA_TEST_GPN_ENTID': {},
     'CELESTRAKGPDATA_TEST_LIVE': 'FALSE',
+    'CELESTRAKGPDATA_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.CELESTRAKGPDATA_TEST_LIVE
 
   if (live) {
     const client = new CelestrakGpDataSDK({
+      apikey: env.CELESTRAKGPDATA_APIKEY,
     })
 
     let idmap: any = env['CELESTRAKGPDATA_TEST_GPN_ENTID']

@@ -92,6 +92,7 @@ def _gpn_basic_setup(extra):
         "CELESTRAKGPDATA_TEST_GPN_ENTID": idmap,
         "CELESTRAKGPDATA_TEST_LIVE": "FALSE",
         "CELESTRAKGPDATA_TEST_EXPLAIN": "FALSE",
+        "CELESTRAKGPDATA_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,6 +103,7 @@ def _gpn_basic_setup(extra):
     if env.get("CELESTRAKGPDATA_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
+                "apikey": env.get("CELESTRAKGPDATA_APIKEY"),
             },
             extra or {},
         ])

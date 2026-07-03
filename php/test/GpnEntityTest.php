@@ -86,6 +86,7 @@ function gpn_basic_setup($extra)
         "CELESTRAKGPDATA_TEST_GPN_ENTID" => $idmap,
         "CELESTRAKGPDATA_TEST_LIVE" => "FALSE",
         "CELESTRAKGPDATA_TEST_EXPLAIN" => "FALSE",
+        "CELESTRAKGPDATA_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,6 +98,7 @@ function gpn_basic_setup($extra)
     if ($env["CELESTRAKGPDATA_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
+                "apikey" => $env["CELESTRAKGPDATA_APIKEY"],
             ],
             $extra ?? [],
         ]);

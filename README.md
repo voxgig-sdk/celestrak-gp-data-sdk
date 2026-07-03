@@ -1,21 +1,8 @@
 # CelestrakGpData SDK
 
-Query CelesTrak's General Perturbations orbital element sets for satellites and space debris
+CelesTrak GP Data client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About CelesTrak GP Data
-
-[CelesTrak](https://celestrak.org) is a long-running independent service maintained by Dr. T.S. Kelso that publishes orbital element data for objects tracked by the US Space Force's Space Surveillance Network. The GP (General Perturbations) data service is its modern HTTP query interface for retrieving current element sets.
-
-What you get from the API:
-
-- Two-Line Element Sets (TLE) and the legacy 3-line variant (`2LE`) suitable for SGP4 propagators.
-- Orbital Mean-Elements Messages (OMM) in `XML`, `KVN`, `JSON`, `JSON-PRETTY`, and `CSV` per CCSDS recommendations.
-- Queries by NORAD catalog number (`CATNR`), International Designator (`INTDES`), satellite name (`NAME`), or a curated group (`GROUP`, e.g. `starlink`, `stations`, `active`).
-- Special data sets via `SPECIAL` for supplemental or operator-supplied elements.
-
-The endpoint typically used is `https://celestrak.org/NORAD/elements/gp.php` with `FORMAT=` selecting the output encoding. CORS is not enabled, so browser clients usually proxy requests. Data is refreshed continuously; CelesTrak asks consumers not to poll faster than the underlying TLE update cadence (a few hours).
 
 ## Try it
 
@@ -49,29 +36,31 @@ gem install celestrak-gp-data-sdk
 luarocks install celestrak-gp-data-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { CelestrakGpDataSDK } from 'celestrak-gp-data'
 
-const client = new CelestrakGpDataSDK({})
+const client = new CelestrakGpDataSDK({
+  apikey: process.env.CELESTRAK-GP-DATA_APIKEY,
+})
 
 // List all gpns
 const gpns = await client.Gpn().list()
+console.log(gpns.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -101,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Gpn** | General Perturbations element sets for tracked space objects, retrieved from `GET /NORAD/elements/gp.php` with query parameters such as `CATNR`, `INTDES`, `GROUP`, `NAME`, or `SPECIAL` and a `FORMAT` of TLE, 2LE, XML, KVN, JSON, JSON-PRETTY, or CSV. | `/NORAD/elements/gp.php` |
+| **Gpn** |  | `/NORAD/elements/gp.php` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -111,12 +100,16 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from celestrakgpdata_sdk import CelestrakGpDataSDK
 
-client = CelestrakGpDataSDK({})
+client = CelestrakGpDataSDK({
+    "apikey": os.environ.get("CELESTRAK-GP-DATA_APIKEY"),
+})
 
 # List all gpns
-gpns, err = client.Gpn(None).list(None, None)
+gpns, err = client.Gpn().list()
+print(gpns)
 ```
 
 ### PHP
@@ -125,10 +118,13 @@ gpns, err = client.Gpn(None).list(None, None)
 <?php
 require_once 'celestrakgpdata_sdk.php';
 
-$client = new CelestrakGpDataSDK([]);
+$client = new CelestrakGpDataSDK([
+    "apikey" => getenv("CELESTRAK-GP-DATA_APIKEY"),
+]);
 
 // List all gpns
-[$gpns, $err] = $client->Gpn(null)->list(null, null);
+[$gpns, $err] = $client->Gpn()->list();
+print_r($gpns);
 ```
 
 ### Golang
@@ -136,10 +132,13 @@ $client = new CelestrakGpDataSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/celestrak-gp-data-sdk/go"
 
-client := sdk.NewCelestrakGpDataSDK(map[string]any{})
+client := sdk.NewCelestrakGpDataSDK(map[string]any{
+    "apikey": os.Getenv("CELESTRAK-GP-DATA_APIKEY"),
+})
 
 // List all gpns
 gpns, err := client.Gpn(nil).List(nil, nil)
+fmt.Println(gpns)
 ```
 
 ### Ruby
@@ -147,10 +146,13 @@ gpns, err := client.Gpn(nil).List(nil, nil)
 ```ruby
 require_relative "CelestrakGpData_sdk"
 
-client = CelestrakGpDataSDK.new({})
+client = CelestrakGpDataSDK.new({
+  "apikey" => ENV["CELESTRAK-GP-DATA_APIKEY"],
+})
 
 # List all gpns
-gpns, err = client.Gpn(nil).list(nil, nil)
+gpns, err = client.Gpn().list
+puts gpns
 ```
 
 ### Lua
@@ -158,10 +160,13 @@ gpns, err = client.Gpn(nil).list(nil, nil)
 ```lua
 local sdk = require("celestrak-gp-data_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("CELESTRAK-GP-DATA_APIKEY"),
+})
 
 -- List all gpns
-local gpns, err = client:Gpn(nil):list(nil, nil)
+local gpns, err = client:Gpn():list()
+print(gpns)
 ```
 
 ## Unit testing in offline mode
@@ -180,25 +185,21 @@ const result = await client.Gpn().load({ id: 'test01' })
 ### Python
 
 ```python
-client = CelestrakGpDataSDK.test(None, None)
-result, err = client.Gpn(None).load(
-    {"id": "test01"}, None
-)
+client = CelestrakGpDataSDK.test()
+result, err = client.Gpn().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = CelestrakGpDataSDK::test(null, null);
-[$result, $err] = $client->Gpn(null)->load(
-    ["id" => "test01"], null
-);
+$client = CelestrakGpDataSDK::test();
+[$result, $err] = $client->Gpn()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Gpn(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -207,19 +208,15 @@ result, err := client.Gpn(nil).Load(
 ### Ruby
 
 ```ruby
-client = CelestrakGpDataSDK.test(nil, nil)
-result, err = client.Gpn(nil).load(
-  { "id" => "test01" }, nil
-)
+client = CelestrakGpDataSDK.test
+result, err = client.Gpn().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Gpn(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Gpn():load({ id = "test01" })
 ```
 
 ## How it works
@@ -323,16 +320,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the CelesTrak GP Data
-
-- Upstream: [https://celestrak.org](https://celestrak.org)
-- API docs: [https://celestrak.org/NORAD/documentation/gp-data-formats.php](https://celestrak.org/NORAD/documentation/gp-data-formats.php)
-
-- Governed by the [CelesTrak Terms of Use](https://celestrak.org/publications/disclaimer.php).
-- Underlying GP element sets are derived from US Space Force data, redistributed by CelesTrak (operated by [Dr. T.S. Kelso](https://celestrak.org)).
-- Attribution to CelesTrak is expected when the data is republished.
-- No warranty of fitness; CelesTrak does not guarantee accuracy for operational decisions.
 
 ---
 
