@@ -26,9 +26,11 @@ import { CelestrakGpDataSDK } from '@voxgig-sdk/celestrak-gp-data'
 
 const client = new CelestrakGpDataSDK()
 
-// List all gpns
-const gpns = await client.gpn.list()
-console.log(gpns.data)
+// List all gpns (returns Gpn[])
+const gpns = await client.Gpn().list()
+for (const gpn of gpns) {
+  console.log(gpn)
+}
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -83,9 +85,10 @@ from celestrakgpdata_sdk import CelestrakGpDataSDK
 
 client = CelestrakGpDataSDK()
 
-# List all gpns
-gpns = client.gpn.list()
-print(gpns)
+# List all gpns (returns a list, raises on error)
+gpns = client.Gpn().list({})
+for gpn in gpns:
+    print(gpn)
 ```
 
 ### PHP
@@ -96,8 +99,8 @@ require_once 'celestrakgpdata_sdk.php';
 
 $client = new CelestrakGpDataSDK();
 
-// List all gpns (throws on error)
-$gpns = $client->gpn()->list();
+// List all gpns (returns an array; throws on error)
+$gpns = $client->Gpn()->list();
 print_r($gpns);
 ```
 
@@ -120,8 +123,8 @@ require_relative "CelestrakGpData_sdk"
 
 client = CelestrakGpDataSDK.new
 
-# List all gpns
-gpns = client.gpn.list
+# List all gpns (returns an Array; raises on error)
+gpns = client.Gpn.list
 puts gpns
 ```
 
@@ -133,7 +136,7 @@ local sdk = require("celestrak-gp-data_sdk")
 local client = sdk.new()
 
 -- List all gpns
-local gpns, err = client:gpn():list()
+local gpns, err = client:Gpn():list()
 print(gpns)
 ```
 
@@ -146,22 +149,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = CelestrakGpDataSDK.test()
-const result = await client.gpn.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const gpn = await client.Gpn().load({ id: 'test01' })
+// gpn is a bare Gpn populated with mock data
+console.log(gpn)
 ```
 
 ### Python
 
 ```python
 client = CelestrakGpDataSDK.test()
-result = client.gpn.load({"id": "test01"})
+gpn = client.Gpn().load({"id": "test01"})
+print(gpn)
 ```
 
 ### PHP
 
 ```php
-$client = CelestrakGpDataSDK::test();
-$result = $client->gpn()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = CelestrakGpDataSDK::test([
+    "entity" => ["gpn" => ["test01" => ["id" => "test01"]]],
+]);
+$gpn = $client->Gpn()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -176,15 +184,18 @@ result, err := client.Gpn(nil).Load(
 ### Ruby
 
 ```ruby
-client = CelestrakGpDataSDK.test
-result = client.gpn.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = CelestrakGpDataSDK.test({
+  "entity" => { "gpn" => { "test01" => { "id" => "test01" } } },
+})
+gpn = client.Gpn.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:gpn():load({ id = "test01" })
+local result, err = client:Gpn():load({ id = "test01" })
 ```
 
 ## How it works
@@ -232,6 +243,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

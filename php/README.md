@@ -29,18 +29,16 @@ require_once 'celestrakgpdata_sdk.php';
 $client = new CelestrakGpDataSDK();
 ```
 
-### 2. List gpns
+### 2. List gpn records
 
 ```php
 try {
-    $result = $client->gpn()->list();
-    if (is_array($result)) {
-        foreach ($result as $item) {
-            $d = $item->data_get();
-            echo $d["id"] . " " . $d["name"] . "\n";
-        }
+    // list() returns an array of Gpn records — iterate directly.
+    $gpns = $client->Gpn()->list();
+    foreach ($gpns as $item) {
+        echo $item["id"] . " " . $item["name"] . "\n";
     }
-} catch (\Exception $err) {
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -86,13 +84,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = CelestrakGpDataSDK::test();
+$client = CelestrakGpDataSDK::test([
+    "entity" => ["gpn" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->gpn()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$gpn = $client->Gpn()->load(["id" => "test01"]);
+print_r($gpn);
 ```
 
 ### Use a custom fetch function
@@ -244,7 +246,7 @@ API path: `/NORAD/elements/gp.php`
 
 ### Gpn
 
-Create an instance: `const gpn = client.gpn`
+Create an instance: `$gpn = $client->Gpn();`
 
 #### Operations
 
@@ -276,8 +278,9 @@ Create an instance: `const gpn = client.gpn`
 
 #### Example: List
 
-```ts
-const gpns = await client.gpn.list()
+```php
+// list() returns an array of Gpn records (throws on error).
+$gpns = $client->Gpn()->list();
 ```
 
 
@@ -352,7 +355,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$gpn = $client->gpn();
+$gpn = $client->Gpn();
 $gpn->load(["id" => "example_id"]);
 
 // $gpn->dataGet() now returns the loaded gpn data

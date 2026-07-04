@@ -233,10 +233,10 @@ class CelestrakGpDataSDK
 
     private $_gpn = null;
 
-    // Idiomatic facade: $client->gpn()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Gpn() (PHP method
-    // names are case-insensitive).
-    public function gpn($data = null)
+    // Canonical facade: $client->Gpn()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->gpn()
+    // resolves here too.
+    public function Gpn($data = null)
     {
         require_once __DIR__ . '/entity/gpn_entity.php';
         if ($data === null) {

@@ -208,13 +208,7 @@ class CelestrakGpDataSDK
   end
 
 
-  # Idiomatic facade: client.gpn.list / client.gpn.load({ "id" => ... })
-  def gpn
-    require_relative 'entity/gpn_entity'
-    @gpn ||= GpnEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.gpn instead.
+  # Canonical facade: client.Gpn.list / client.Gpn.load({ "id" => ... })
   def Gpn(data = nil)
     require_relative 'entity/gpn_entity'
     GpnEntity.new(self, data)

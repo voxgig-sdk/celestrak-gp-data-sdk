@@ -204,14 +204,7 @@ class CelestrakGpDataSDK {
 
 
 
-  _gpn?: GpnEntity
-
-  // Idiomatic facade: `client.gpn.list()` / `client.gpn.load({ id })`.
-  get gpn(): GpnEntity {
-    return (this._gpn ??= new GpnEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.gpn` instead. */
+  // Entity access: `client.Gpn().list()` / `client.Gpn().load({ id })`.
   Gpn(data?: any) {
     const self = this
     return new GpnEntity(self,data)

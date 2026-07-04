@@ -80,7 +80,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## GpnEntity
 
 ```python
-gpn = client.gpn
+gpn = client.Gpn()
 ```
 
 ### Fields
@@ -112,7 +112,9 @@ gpn = client.gpn
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.gpn.list({})
+results = client.Gpn().list({})
+for gpn in results:
+    print(gpn)
 ```
 
 ### Common Methods

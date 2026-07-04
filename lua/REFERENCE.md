@@ -83,7 +83,7 @@ same parameters as `direct()`.
 ## GpnEntity
 
 ```lua
-local gpn = client:gpn(nil)
+local gpn = client:Gpn(nil)
 ```
 
 ### Fields
@@ -115,7 +115,7 @@ local gpn = client:gpn(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:gpn():list()
+local results, err = client:Gpn():list()
 ```
 
 ### Common Methods

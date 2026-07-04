@@ -31,14 +31,16 @@ from celestrakgpdata_sdk import CelestrakGpDataSDK
 client = CelestrakGpDataSDK()
 ```
 
-### 2. List gpns
+### 2. List gpn records
+
+`list()` returns a `list` of records (each a `dict`) and raises on
+error — iterate it directly.
 
 ```python
 try:
-    result = client.gpn.list()
-    for item in result:
-        d = item.data_get()
-        print(d["id"], d["name"])
+    gpns = client.Gpn().list({})
+    for gpn in gpns:
+        print(gpn)
 except Exception as err:
     print(f"list failed: {err}")
 ```
@@ -86,8 +88,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = CelestrakGpDataSDK.test()
 
-result = client.gpn.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+gpn = client.Gpn().load({"id": "test01"})
+# gpn contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -236,7 +239,7 @@ API path: `/NORAD/elements/gp.php`
 
 ### Gpn
 
-Create an instance: `const gpn = client.gpn`
+Create an instance: `gpn = client.Gpn()`
 
 #### Operations
 
@@ -268,8 +271,8 @@ Create an instance: `const gpn = client.gpn`
 
 #### Example: List
 
-```ts
-const gpns = await client.gpn.list()
+```python
+gpns = client.Gpn().list({})
 ```
 
 
@@ -343,7 +346,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-gpn = client.gpn
+gpn = client.Gpn()
 gpn.load({"id": "example_id"})
 
 # gpn.data_get() now returns the loaded gpn data

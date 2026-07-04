@@ -28,16 +28,14 @@ require_relative "CelestrakGpData_sdk"
 client = CelestrakGpDataSDK.new
 ```
 
-### 2. List gpns
+### 2. List gpn records
 
 ```ruby
 begin
-  result = client.gpn.list
-  if result.is_a?(Array)
-    result.each do |item|
-      d = item.data_get
-      puts "#{d["id"]} #{d["name"]}"
-    end
+  # list returns an Array of Gpn records — iterate directly.
+  gpns = client.Gpn.list
+  gpns.each do |item|
+    puts "#{item["id"]} #{item["name"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -85,13 +83,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = CelestrakGpDataSDK.test
+client = CelestrakGpDataSDK.test({
+  "entity" => { "gpn" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.gpn.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+gpn = client.Gpn.load({ "id" => "test01" })
+puts gpn
 ```
 
 ### Use a custom fetch function
@@ -239,7 +241,7 @@ API path: `/NORAD/elements/gp.php`
 
 ### Gpn
 
-Create an instance: `const gpn = client.gpn`
+Create an instance: `gpn = client.Gpn`
 
 #### Operations
 
@@ -271,8 +273,9 @@ Create an instance: `const gpn = client.gpn`
 
 #### Example: List
 
-```ts
-const gpns = await client.gpn.list()
+```ruby
+# list returns an Array of Gpn records (raises on error).
+gpns = client.Gpn.list
 ```
 
 
@@ -347,7 +350,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-gpn = client.gpn
+gpn = client.Gpn
 gpn.load({ "id" => "example_id" })
 
 # gpn.data_get now returns the loaded gpn data

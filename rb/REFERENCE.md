@@ -86,7 +86,7 @@ same parameters as `direct()`. Raises on error.
 ## GpnEntity
 
 ```ruby
-gpn = client.gpn
+gpn = client.Gpn
 ```
 
 ### Fields
@@ -118,7 +118,7 @@ gpn = client.gpn
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.gpn.list(nil)
+results = client.Gpn.list(nil)
 ```
 
 ### Common Methods

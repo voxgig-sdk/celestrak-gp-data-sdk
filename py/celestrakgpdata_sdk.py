@@ -220,25 +220,15 @@ class CelestrakGpDataSDK:
         }
 
 
-    @property
-    def gpn(self):
-        """Idiomatic facade: client.gpn.list() / client.gpn.load({"id": ...})."""
-        from entity.gpn_entity import GpnEntity
-        cached = getattr(self, "_gpn", None)
-        if cached is None:
-            cached = GpnEntity(self, None)
-            self._gpn = cached
-        return cached
-
-    def Gpn(self, data=None):
-        # Deprecated: use client.gpn instead.
+    def Gpn(self, data=None) -> "GpnEntity":
+        """Entity factory: client.Gpn().list({}) / client.Gpn().load({"id": ...})."""
         from entity.gpn_entity import GpnEntity
         return GpnEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "CelestrakGpDataSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -258,3 +248,9 @@ class CelestrakGpDataSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.gpn_entity import GpnEntity

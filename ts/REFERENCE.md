@@ -109,7 +109,7 @@ Alias for `CelestrakGpDataSDK.test()`.
 ## GpnEntity
 
 ```ts
-const gpn = client.gpn
+const gpn = client.Gpn()
 ```
 
 ### Fields
@@ -141,7 +141,7 @@ const gpn = client.gpn
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.gpn.list()
+const results = await client.Gpn().list()
 ```
 
 ### Common Methods

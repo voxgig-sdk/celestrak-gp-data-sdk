@@ -85,7 +85,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## GpnEntity
 
 ```php
-$gpn = $client->gpn();
+$gpn = $client->Gpn();
 ```
 
 ### Fields
@@ -117,7 +117,7 @@ $gpn = $client->gpn();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->gpn()->list([]);
+$results = $client->Gpn()->list([]);
 ```
 
 ### Common Methods
