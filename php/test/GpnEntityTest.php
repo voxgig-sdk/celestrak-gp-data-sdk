@@ -50,8 +50,7 @@ class GpnEntityTest extends TestCase
         $gpn_ref01_ent = $client->Gpn(null);
         $gpn_ref01_match = [];
 
-        [$gpn_ref01_list_result, $err] = $gpn_ref01_ent->list($gpn_ref01_match, null);
-        $this->assertNull($err);
+        $gpn_ref01_list_result = $gpn_ref01_ent->list($gpn_ref01_match, null);
         $this->assertIsArray($gpn_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function gpn_basic_setup($extra)
         "CELESTRAKGPDATA_TEST_GPN_ENTID" => $idmap,
         "CELESTRAKGPDATA_TEST_LIVE" => "FALSE",
         "CELESTRAKGPDATA_TEST_EXPLAIN" => "FALSE",
-        "CELESTRAKGPDATA_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function gpn_basic_setup($extra)
     if ($env["CELESTRAKGPDATA_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["CELESTRAKGPDATA_APIKEY"],
             ],
             $extra ?? [],
         ]);

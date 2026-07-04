@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Gpn,
+  GpnListMatch,
+} from '../CelestrakGpDataTypes'
 
 // TODO: needs Entity superclass
-class GpnEntity extends CelestrakGpDataEntityBase {
+class GpnEntity extends CelestrakGpDataEntityBase<Gpn> {
 
   constructor(client: CelestrakGpDataSDK, entopts: any) {
     super(client, entopts)
@@ -33,7 +37,7 @@ class GpnEntity extends CelestrakGpDataEntityBase {
 
 
 
-  async list(this: any, reqmatch?: any, ctrl?: Control) {
+  async list(this: any, reqmatch?: GpnListMatch, ctrl?: Control): Promise<Gpn[]> {
 
     const utility = this._utility
 
@@ -133,7 +137,9 @@ class GpnEntity extends CelestrakGpDataEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Gpn[]> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

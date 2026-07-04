@@ -50,8 +50,7 @@ class TestGpnEntity:
         gpn_ref01_ent = client.Gpn(None)
         gpn_ref01_match = {}
 
-        gpn_ref01_list_result, err = gpn_ref01_ent.list(gpn_ref01_match, None)
-        assert err is None
+        gpn_ref01_list_result = gpn_ref01_ent.list(gpn_ref01_match, None)
         assert isinstance(gpn_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _gpn_basic_setup(extra):
         "CELESTRAKGPDATA_TEST_GPN_ENTID": idmap,
         "CELESTRAKGPDATA_TEST_LIVE": "FALSE",
         "CELESTRAKGPDATA_TEST_EXPLAIN": "FALSE",
-        "CELESTRAKGPDATA_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _gpn_basic_setup(extra):
     if env.get("CELESTRAKGPDATA_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("CELESTRAKGPDATA_APIKEY"),
             },
             extra or {},
         ])

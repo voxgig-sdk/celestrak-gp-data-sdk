@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch GpnListMatch
+---@param ctrl? table
+---@return Gpn[]
+---@return string? err
 function GpnEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

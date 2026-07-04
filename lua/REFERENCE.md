@@ -19,7 +19,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `table` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -84,7 +83,7 @@ same parameters as `direct()`.
 ## GpnEntity
 
 ```lua
-local gpn = client:Gpn(nil)
+local gpn = client:gpn(nil)
 ```
 
 ### Fields
@@ -116,7 +115,7 @@ local gpn = client:Gpn(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Gpn():list()
+local results, err = client:gpn():list()
 ```
 
 ### Common Methods

@@ -9,12 +9,9 @@ The Lua SDK for the CelestrakGpData API — an entity-oriented client using Lua 
 
 
 ## Install
-```bash
-luarocks install voxgig-sdk-celestrak-gp-data
-```
-
-If the module is not yet published, add the source directory to
-your `LUA_PATH`:
+This package is not yet published to LuaRocks. Install it from the
+GitHub release tag (`lua/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/celestrak-gp-data-sdk/releases)),
+or add the source directory to your `LUA_PATH`:
 
 ```bash
 export LUA_PATH="path/to/lua/?.lua;path/to/lua/?/init.lua;;"
@@ -31,15 +28,13 @@ loading a specific record.
 ```lua
 local sdk = require("celestrak-gp-data_sdk")
 
-local client = sdk.new({
-  apikey = os.getenv("CELESTRAK-GP-DATA_APIKEY"),
-})
+local client = sdk.new()
 ```
 
 ### 2. List gpns
 
 ```lua
-local result, err = client:Gpn():list()
+local result, err = client:gpn():list()
 if err then error(err) end
 
 if type(result) == "table" then
@@ -93,7 +88,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:CelestrakGpData():load({ id = "test01" })
+local result, err = client:gpn():load({ id = "test01" })
 -- result contains mock response data
 ```
 
@@ -126,8 +121,7 @@ local client = sdk.new({
 Create a `.env.local` file at the project root:
 
 ```
-CELESTRAK-GP-DATA_TEST_LIVE=TRUE
-CELESTRAK-GP-DATA_APIKEY=<your-key>
+CELESTRAK_GP_DATA_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -150,7 +144,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -243,7 +236,7 @@ API path: `/NORAD/elements/gp.php`
 
 ### Gpn
 
-Create an instance: `const gpn = client.Gpn()`
+Create an instance: `const gpn = client.gpn`
 
 #### Operations
 
@@ -276,7 +269,7 @@ Create an instance: `const gpn = client.Gpn()`
 #### Example: List
 
 ```ts
-const gpns = await client.Gpn().list()
+const gpns = await client.gpn.list()
 ```
 
 
@@ -351,11 +344,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local moon = client:Moon(nil)
-moon:load({ planet_id = "earth", id = "luna" }, nil)
+local gpn = client:gpn()
+gpn:load({ id = "example_id" })
 
--- moon:data_get() now returns the loaded moon data
--- moon:match_get() returns the last match criteria
+-- gpn:data_get() now returns the loaded gpn data
+-- gpn:match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

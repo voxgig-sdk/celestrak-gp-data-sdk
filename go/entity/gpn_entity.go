@@ -85,6 +85,27 @@ func (e *GpnEntity) Match(args ...any) any {
 	return out
 }
 
+// DataTyped is the statically-typed accessor for this entity's data. With no
+// argument it returns the current data as an Gpn; with an argument it
+// sets the data and returns the stored value. It delegates to the untyped Data
+// (identical runtime) and converts at the typed boundary.
+func (e *GpnEntity) DataTyped(data ...Gpn) Gpn {
+	if len(data) > 0 {
+		return typedFrom[Gpn](e.Data(asMap(data[0])))
+	}
+	return typedFrom[Gpn](e.Data())
+}
+
+// MatchTyped mirrors DataTyped for the entity's match filter. The match is a
+// partial of the entity, so it round-trips through Gpn (all fields
+// optional at the wire level).
+func (e *GpnEntity) MatchTyped(match ...Gpn) Gpn {
+	if len(match) > 0 {
+		return typedFrom[Gpn](e.Match(asMap(match[0])))
+	}
+	return typedFrom[Gpn](e.Match())
+}
+
 func (e *GpnEntity) Load(_ map[string]any, _ map[string]any) (any, error) {
 	return core.UnsupportedOp("load", e.name)
 }
@@ -108,6 +129,17 @@ func (e *GpnEntity) List(reqmatch map[string]any, ctrl map[string]any) (any, err
 			}
 		}
 	})
+}
+
+// ListTyped is the statically-typed variant of List: it takes an
+// GpnListMatch and returns []Gpn. It delegates to the untyped
+// List (identical runtime) and converts at the typed boundary.
+func (e *GpnEntity) ListTyped(reqmatch GpnListMatch, ctrl map[string]any) ([]Gpn, error) {
+	res, err := e.List(asMap(reqmatch), ctrl)
+	if err != nil {
+		return nil, err
+	}
+	return typedSliceFrom[Gpn](res), nil
 }
 
 

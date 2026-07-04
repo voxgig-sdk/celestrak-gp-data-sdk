@@ -93,14 +93,12 @@ func gpnDirectSetup(mockres any) *gpnDirectSetupResult {
 	env := envOverride(map[string]any{
 		"CELESTRAKGPDATA_TEST_GPN_ENTID": map[string]any{},
 		"CELESTRAKGPDATA_TEST_LIVE":    "FALSE",
-		"CELESTRAKGPDATA_APIKEY":       "NONE",
 	})
 
 	live := env["CELESTRAKGPDATA_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["CELESTRAKGPDATA_APIKEY"],
 		}
 		client := sdk.NewCelestrakGpDataSDK(mergedOpts)
 

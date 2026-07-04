@@ -245,6 +245,9 @@ func (sdk *CelestrakGpDataSDK) Direct(fetchargs map[string]any) (map[string]any,
 }
 
 
+// Gpn returns a Gpn entity bound to this client.
+// Idiomatic usage: client.Gpn(nil).List(nil, nil) or
+// client.Gpn(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *CelestrakGpDataSDK) Gpn(data map[string]any) CelestrakGpDataEntity {
 	return NewGpnEntityFunc(sdk, data)
 }

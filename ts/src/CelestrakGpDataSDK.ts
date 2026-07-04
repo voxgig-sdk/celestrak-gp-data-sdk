@@ -2,6 +2,8 @@
 
 import { GpnEntity } from './entity/GpnEntity'
 
+export type * from './CelestrakGpDataTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -202,6 +204,14 @@ class CelestrakGpDataSDK {
 
 
 
+  _gpn?: GpnEntity
+
+  // Idiomatic facade: `client.gpn.list()` / `client.gpn.load({ id })`.
+  get gpn(): GpnEntity {
+    return (this._gpn ??= new GpnEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.gpn` instead. */
   Gpn(data?: any) {
     const self = this
     return new GpnEntity(self,data)

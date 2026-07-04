@@ -244,6 +244,19 @@ end
 
 
 
+-- Idiomatic facade: client:gpn():list() / client:gpn():load({ id = ... })
+function CelestrakGpDataSDK:gpn(data)
+  local EntityMod = require("entity.gpn_entity")
+  if data == nil then
+    if self._gpn == nil then
+      self._gpn = EntityMod.new(self, nil)
+    end
+    return self._gpn
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:gpn() instead.
 function CelestrakGpDataSDK:Gpn(data)
   local EntityMod = require("entity.gpn_entity")
   return EntityMod.new(self, data)
