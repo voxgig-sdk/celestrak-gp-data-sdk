@@ -8,7 +8,7 @@ Complete API reference for the CelestrakGpData Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'celestrak-gp-data_sdk'
+require_relative 'CelestrakGpData_sdk'
 
 client = CelestrakGpDataSDK.new(options)
 ```
@@ -93,32 +93,32 @@ gpn = client.Gpn
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `arg_of_pericenter` | ``$NUMBER`` | No |  |
-| `bstar` | ``$NUMBER`` | No |  |
-| `classification_type` | ``$STRING`` | No |  |
-| `eccentricity` | ``$NUMBER`` | No |  |
-| `element_set_no` | ``$INTEGER`` | No |  |
-| `ephemeris_type` | ``$INTEGER`` | No |  |
-| `epoch` | ``$STRING`` | No |  |
-| `inclination` | ``$NUMBER`` | No |  |
-| `mean_anomaly` | ``$NUMBER`` | No |  |
-| `mean_motion` | ``$NUMBER`` | No |  |
-| `mean_motion_ddot` | ``$NUMBER`` | No |  |
-| `mean_motion_dot` | ``$NUMBER`` | No |  |
-| `norad_cat_id` | ``$INTEGER`` | No |  |
-| `object_id` | ``$STRING`` | No |  |
-| `object_name` | ``$STRING`` | No |  |
-| `ra_of_asc_node` | ``$NUMBER`` | No |  |
-| `rev_at_epoch` | ``$INTEGER`` | No |  |
+| `arg_of_pericenter` | `Float` | No |  |
+| `bstar` | `Float` | No |  |
+| `classification_type` | `String` | No |  |
+| `eccentricity` | `Float` | No |  |
+| `element_set_no` | `Integer` | No |  |
+| `ephemeris_type` | `Integer` | No |  |
+| `epoch` | `String` | No |  |
+| `inclination` | `Float` | No |  |
+| `mean_anomaly` | `Float` | No |  |
+| `mean_motion` | `Float` | No |  |
+| `mean_motion_ddot` | `Float` | No |  |
+| `mean_motion_dot` | `Float` | No |  |
+| `norad_cat_id` | `Integer` | No |  |
+| `object_id` | `String` | No |  |
+| `object_name` | `String` | No |  |
+| `ra_of_asc_node` | `Float` | No |  |
+| `rev_at_epoch` | `Integer` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Gpn.list(nil)
+results = client.Gpn.list
 ```
 
 ### Common Methods

@@ -34,7 +34,7 @@ class Gpn
     public ?int $rev_at_epoch = null;
 }
 
-/** Match filter for Gpn#list (any subset of Gpn fields). */
+/** Request payload for Gpn#list. */
 class GpnListMatch
 {
     public ?float $arg_of_pericenter = null;

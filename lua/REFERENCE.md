@@ -90,23 +90,23 @@ local gpn = client:Gpn(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `arg_of_pericenter` | ``$NUMBER`` | No |  |
-| `bstar` | ``$NUMBER`` | No |  |
-| `classification_type` | ``$STRING`` | No |  |
-| `eccentricity` | ``$NUMBER`` | No |  |
-| `element_set_no` | ``$INTEGER`` | No |  |
-| `ephemeris_type` | ``$INTEGER`` | No |  |
-| `epoch` | ``$STRING`` | No |  |
-| `inclination` | ``$NUMBER`` | No |  |
-| `mean_anomaly` | ``$NUMBER`` | No |  |
-| `mean_motion` | ``$NUMBER`` | No |  |
-| `mean_motion_ddot` | ``$NUMBER`` | No |  |
-| `mean_motion_dot` | ``$NUMBER`` | No |  |
-| `norad_cat_id` | ``$INTEGER`` | No |  |
-| `object_id` | ``$STRING`` | No |  |
-| `object_name` | ``$STRING`` | No |  |
-| `ra_of_asc_node` | ``$NUMBER`` | No |  |
-| `rev_at_epoch` | ``$INTEGER`` | No |  |
+| `arg_of_pericenter` | `number` | No |  |
+| `bstar` | `number` | No |  |
+| `classification_type` | `string` | No |  |
+| `eccentricity` | `number` | No |  |
+| `element_set_no` | `number` | No |  |
+| `ephemeris_type` | `number` | No |  |
+| `epoch` | `string` | No |  |
+| `inclination` | `number` | No |  |
+| `mean_anomaly` | `number` | No |  |
+| `mean_motion` | `number` | No |  |
+| `mean_motion_ddot` | `number` | No |  |
+| `mean_motion_dot` | `number` | No |  |
+| `norad_cat_id` | `number` | No |  |
+| `object_id` | `string` | No |  |
+| `object_name` | `string` | No |  |
+| `ra_of_asc_node` | `number` | No |  |
+| `rev_at_epoch` | `number` | No |  |
 
 ### Operations
 

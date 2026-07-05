@@ -29,8 +29,7 @@ type Gpn struct {
 	RevAtEpoch *int `json:"rev_at_epoch,omitempty"`
 }
 
-// GpnListMatch mirrors the gpn fields as an all-optional match
-// filter (Go analog of Partial<Gpn>).
+// GpnListMatch is the typed request payload for Gpn.ListTyped.
 type GpnListMatch struct {
 	ArgOfPericenter *float64 `json:"arg_of_pericenter,omitempty"`
 	Bstar *float64 `json:"bstar,omitempty"`

@@ -26,6 +26,23 @@
 ---@field rev_at_epoch? number
 
 ---@class GpnListMatch
+---@field arg_of_pericenter? number
+---@field bstar? number
+---@field classification_type? string
+---@field eccentricity? number
+---@field element_set_no? number
+---@field ephemeris_type? number
+---@field epoch? string
+---@field inclination? number
+---@field mean_anomaly? number
+---@field mean_motion? number
+---@field mean_motion_ddot? number
+---@field mean_motion_dot? number
+---@field norad_cat_id? number
+---@field object_id? string
+---@field object_name? string
+---@field ra_of_asc_node? number
+---@field rev_at_epoch? number
 
 local M = {}
 

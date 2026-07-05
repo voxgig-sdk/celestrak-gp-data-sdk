@@ -4,6 +4,8 @@
 
 The PHP SDK for the CelestrakGpData API — an entity-oriented client using PHP conventions.
 
+The SDK exposes the API as capitalised, semantic **Entities** — for example `$client->Gpn()` — with named operations (`list`) instead of raw URL paths and query strings. Working with resources and verbs keeps call sites self-describing and reduces cognitive load.
+
 > Other languages, the CLI, and MCP server live alongside this one — see
 > the [top-level README](../README.md).
 
@@ -36,10 +38,41 @@ try {
     // list() returns an array of Gpn records — iterate directly.
     $gpns = $client->Gpn()->list();
     foreach ($gpns as $item) {
-        echo $item["id"] . " " . $item["name"] . "\n";
+        echo $item["arg_of_pericenter"] . "\n";
     }
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
+}
+```
+
+
+## Error handling
+
+Entity operations throw a `\Throwable` on failure, so wrap them in
+`try` / `catch`:
+
+```php
+try {
+    $gpns = $client->Gpn()->list();
+} catch (\Throwable $err) {
+    echo "Error: " . $err->getMessage();
+}
+```
+
+`direct()` does **not** throw — it returns the result array. Branch on
+`ok`; on failure `status` holds the HTTP status (for error responses) and
+`err` holds a transport error, so read both defensively:
+
+```php
+$result = $client->direct([
+    "path" => "/api/resource/{id}",
+    "method" => "GET",
+    "params" => ["id" => "example_id"],
+]);
+
+if (! $result["ok"]) {
+    $err = $result["err"] ?? null;
+    echo "request failed: " . ($err ? $err->getMessage() : "HTTP " . $result["status"]);
 }
 ```
 
@@ -63,7 +96,10 @@ if ($result["ok"]) {
     echo $result["status"];  // 200
     print_r($result["data"]);  // response body
 } else {
-    echo "Error: " . $result["err"]->getMessage();
+    // On an HTTP error status there is no err (only a transport failure sets
+    // it), so fall back to the status code.
+    $err = $result["err"] ?? null;
+    echo "Error: " . ($err ? $err->getMessage() : "HTTP " . $result["status"]);
 }
 ```
 
@@ -84,16 +120,13 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required. Seed fixture
-data via the `entity` option so offline calls resolve without a live server:
+Create a mock client for unit testing — no server required:
 
 ```php
-$client = CelestrakGpDataSDK::test([
-    "entity" => ["gpn" => ["test01" => ["id" => "test01"]]],
-]);
+$client = CelestrakGpDataSDK::test();
 
-// load() returns the bare mock record (throws on error).
-$gpn = $client->Gpn()->load(["id" => "test01"]);
+// Entity ops return the bare mock record (throws on error).
+$gpn = $client->Gpn()->list();
 print_r($gpn);
 ```
 
@@ -181,11 +214,7 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `($reqmatch, $ctrl): array` | Load a single entity by match criteria. |
-| `list` | `($reqmatch, $ctrl): array` | List entities matching the criteria. |
-| `create` | `($reqdata, $ctrl): array` | Create a new entity. |
-| `update` | `($reqdata, $ctrl): array` | Update an existing entity. |
-| `remove` | `($reqmatch, $ctrl): array` | Remove an entity. |
+| `list` | `(?array $reqmatch = null, $ctrl): array` | List entities matching the criteria (call with no argument to list all). |
 | `data_get` | `(): array` | Get entity data. |
 | `data_set` | `($data): void` | Set entity data. |
 | `match_get` | `(): array` | Get entity match criteria. |
@@ -258,23 +287,23 @@ Create an instance: `$gpn = $client->Gpn();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `arg_of_pericenter` | ``$NUMBER`` |  |
-| `bstar` | ``$NUMBER`` |  |
-| `classification_type` | ``$STRING`` |  |
-| `eccentricity` | ``$NUMBER`` |  |
-| `element_set_no` | ``$INTEGER`` |  |
-| `ephemeris_type` | ``$INTEGER`` |  |
-| `epoch` | ``$STRING`` |  |
-| `inclination` | ``$NUMBER`` |  |
-| `mean_anomaly` | ``$NUMBER`` |  |
-| `mean_motion` | ``$NUMBER`` |  |
-| `mean_motion_ddot` | ``$NUMBER`` |  |
-| `mean_motion_dot` | ``$NUMBER`` |  |
-| `norad_cat_id` | ``$INTEGER`` |  |
-| `object_id` | ``$STRING`` |  |
-| `object_name` | ``$STRING`` |  |
-| `ra_of_asc_node` | ``$NUMBER`` |  |
-| `rev_at_epoch` | ``$INTEGER`` |  |
+| `arg_of_pericenter` | `float` |  |
+| `bstar` | `float` |  |
+| `classification_type` | `string` |  |
+| `eccentricity` | `float` |  |
+| `element_set_no` | `int` |  |
+| `ephemeris_type` | `int` |  |
+| `epoch` | `string` |  |
+| `inclination` | `float` |  |
+| `mean_anomaly` | `float` |  |
+| `mean_motion` | `float` |  |
+| `mean_motion_ddot` | `float` |  |
+| `mean_motion_dot` | `float` |  |
+| `norad_cat_id` | `int` |  |
+| `object_id` | `string` |  |
+| `object_name` | `string` |  |
+| `ra_of_asc_node` | `float` |  |
+| `rev_at_epoch` | `int` |  |
 
 #### Example: List
 
@@ -284,12 +313,16 @@ $gpns = $client->Gpn()->list();
 ```
 
 
-## Explanation
+## Advanced
+
+> The sections above cover everyday use. The material below explains the
+> SDK's internals — useful when extending it with custom features, but not
+> needed for normal use.
 
 ### The operation pipeline
 
-Every entity operation (load, list, create, update, remove) follows a
-six-stage pipeline. Each stage fires a feature hook before executing:
+Every entity operation follows a six-stage pipeline. Each stage fires a
+feature hook before executing:
 
 ```
 PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
@@ -306,8 +339,9 @@ PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
 - **PreDone**: Final stage before returning to the caller. Entity
   state (match, data) is updated here.
 
-If any stage returns an error, the pipeline short-circuits and the
-error is returned to the caller as the second element in the return array.
+If any stage errors, the pipeline short-circuits and the error surfaces
+to the caller — see [Error handling](#error-handling) for how that looks
+in this language.
 
 ### Features and hooks
 
@@ -351,15 +385,15 @@ when needed.
 
 ### Entity state
 
-Entity instances are stateful. After a successful `load`, the entity
+Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```php
 $gpn = $client->Gpn();
-$gpn->load(["id" => "example_id"]);
+$gpn->list();
 
-// $gpn->dataGet() now returns the loaded gpn data
-// $gpn->matchGet() returns the last match criteria
+// $gpn->data_get() now returns the gpn data from the last list
+// $gpn->match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

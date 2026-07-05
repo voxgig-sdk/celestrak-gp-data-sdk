@@ -97,23 +97,23 @@ gpn := client.Gpn(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `arg_of_pericenter` | ``$NUMBER`` | No |  |
-| `bstar` | ``$NUMBER`` | No |  |
-| `classification_type` | ``$STRING`` | No |  |
-| `eccentricity` | ``$NUMBER`` | No |  |
-| `element_set_no` | ``$INTEGER`` | No |  |
-| `ephemeris_type` | ``$INTEGER`` | No |  |
-| `epoch` | ``$STRING`` | No |  |
-| `inclination` | ``$NUMBER`` | No |  |
-| `mean_anomaly` | ``$NUMBER`` | No |  |
-| `mean_motion` | ``$NUMBER`` | No |  |
-| `mean_motion_ddot` | ``$NUMBER`` | No |  |
-| `mean_motion_dot` | ``$NUMBER`` | No |  |
-| `norad_cat_id` | ``$INTEGER`` | No |  |
-| `object_id` | ``$STRING`` | No |  |
-| `object_name` | ``$STRING`` | No |  |
-| `ra_of_asc_node` | ``$NUMBER`` | No |  |
-| `rev_at_epoch` | ``$INTEGER`` | No |  |
+| `arg_of_pericenter` | `float64` | No |  |
+| `bstar` | `float64` | No |  |
+| `classification_type` | `string` | No |  |
+| `eccentricity` | `float64` | No |  |
+| `element_set_no` | `int` | No |  |
+| `ephemeris_type` | `int` | No |  |
+| `epoch` | `string` | No |  |
+| `inclination` | `float64` | No |  |
+| `mean_anomaly` | `float64` | No |  |
+| `mean_motion` | `float64` | No |  |
+| `mean_motion_ddot` | `float64` | No |  |
+| `mean_motion_dot` | `float64` | No |  |
+| `norad_cat_id` | `int` | No |  |
+| `object_id` | `string` | No |  |
+| `object_name` | `string` | No |  |
+| `ra_of_asc_node` | `float64` | No |  |
+| `rev_at_epoch` | `int` | No |  |
 
 ### Operations
 

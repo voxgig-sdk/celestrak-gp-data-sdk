@@ -81,7 +81,7 @@ Gpn = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Gpn#list (any subset of Gpn fields).
+# Request payload for Gpn#list.
 #
 # @!attribute [rw] arg_of_pericenter
 #   @return [Float, nil]

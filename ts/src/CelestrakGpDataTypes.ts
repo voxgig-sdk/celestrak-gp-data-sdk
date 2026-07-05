@@ -25,5 +25,23 @@ export interface Gpn {
   rev_at_epoch?: number
 }
 
-export type GpnListMatch = Partial<Gpn>
+export interface GpnListMatch {
+  arg_of_pericenter?: number
+  bstar?: number
+  classification_type?: string
+  eccentricity?: number
+  element_set_no?: number
+  ephemeris_type?: number
+  epoch?: string
+  inclination?: number
+  mean_anomaly?: number
+  mean_motion?: number
+  mean_motion_ddot?: number
+  mean_motion_dot?: number
+  norad_cat_id?: number
+  object_id?: string
+  object_name?: string
+  ra_of_asc_node?: number
+  rev_at_epoch?: number
+}
 

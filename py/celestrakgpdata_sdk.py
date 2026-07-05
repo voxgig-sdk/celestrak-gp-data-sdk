@@ -221,7 +221,7 @@ class CelestrakGpDataSDK:
 
 
     def Gpn(self, data=None) -> "GpnEntity":
-        """Entity factory: client.Gpn().list({}) / client.Gpn().load({"id": ...})."""
+        """Entity factory: client.Gpn().list() / client.Gpn().load({"id": ...})."""
         from entity.gpn_entity import GpnEntity
         return GpnEntity(self, data)
 

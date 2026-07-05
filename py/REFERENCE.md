@@ -8,7 +8,7 @@ Complete API reference for the CelestrakGpData Python SDK.
 ### Constructor
 
 ```python
-from celestrak-gp-data_sdk import CelestrakGpDataSDK
+from celestrakgpdata_sdk import CelestrakGpDataSDK
 
 client = CelestrakGpDataSDK(options)
 ```
@@ -87,32 +87,32 @@ gpn = client.Gpn()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `arg_of_pericenter` | ``$NUMBER`` | No |  |
-| `bstar` | ``$NUMBER`` | No |  |
-| `classification_type` | ``$STRING`` | No |  |
-| `eccentricity` | ``$NUMBER`` | No |  |
-| `element_set_no` | ``$INTEGER`` | No |  |
-| `ephemeris_type` | ``$INTEGER`` | No |  |
-| `epoch` | ``$STRING`` | No |  |
-| `inclination` | ``$NUMBER`` | No |  |
-| `mean_anomaly` | ``$NUMBER`` | No |  |
-| `mean_motion` | ``$NUMBER`` | No |  |
-| `mean_motion_ddot` | ``$NUMBER`` | No |  |
-| `mean_motion_dot` | ``$NUMBER`` | No |  |
-| `norad_cat_id` | ``$INTEGER`` | No |  |
-| `object_id` | ``$STRING`` | No |  |
-| `object_name` | ``$STRING`` | No |  |
-| `ra_of_asc_node` | ``$NUMBER`` | No |  |
-| `rev_at_epoch` | ``$INTEGER`` | No |  |
+| `arg_of_pericenter` | `float` | No |  |
+| `bstar` | `float` | No |  |
+| `classification_type` | `str` | No |  |
+| `eccentricity` | `float` | No |  |
+| `element_set_no` | `int` | No |  |
+| `ephemeris_type` | `int` | No |  |
+| `epoch` | `str` | No |  |
+| `inclination` | `float` | No |  |
+| `mean_anomaly` | `float` | No |  |
+| `mean_motion` | `float` | No |  |
+| `mean_motion_ddot` | `float` | No |  |
+| `mean_motion_dot` | `float` | No |  |
+| `norad_cat_id` | `int` | No |  |
+| `object_id` | `str` | No |  |
+| `object_name` | `str` | No |  |
+| `ra_of_asc_node` | `float` | No |  |
+| `rev_at_epoch` | `int` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Gpn().list({})
+results = client.Gpn().list()
 for gpn in results:
     print(gpn)
 ```
