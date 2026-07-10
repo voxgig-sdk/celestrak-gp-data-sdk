@@ -20,10 +20,10 @@ main: {
           url: "https://celestrak.org"
         }
       ]
+      summary: "CelesTrak provides access to General Perturbations (GP) orbital data, including Two-Line Element Sets (TLEs) and newer formats like XML and JSON."
       termsOfService: "https://celestrak.org/NORAD/documentation/gp-data-formats.php"
       title: "CelesTrak GP Data"
       version: "1.0.0"
+      website: "https://celestrak.org/NORAD/documentation/gp-data-formats.php"
     }
   }
-}
-

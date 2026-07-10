@@ -91,6 +91,7 @@ same parameters as `Direct()`.
 
 ```go
 gpn := client.Gpn(nil)
+fmt.Println(gpn.GetName()) // "gpn"
 ```
 
 ### Fields
@@ -123,6 +124,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Gpn(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods

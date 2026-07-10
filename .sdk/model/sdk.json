@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -349,15 +346,18 @@
           "name": "CelesTrak Terms of Use",
           "url": "https://celestrak.org/NORAD/documentation/gp-data-formats.php"
         },
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "CelesTrak Production Server",
             "url": "https://celestrak.org"
           }
         ],
+        "summary": "CelesTrak provides access to General Perturbations (GP) orbital data, including Two-Line Element Sets (TLEs) and newer formats like XML and JSON.",
         "termsOfService": "https://celestrak.org/NORAD/documentation/gp-data-formats.php",
         "title": "CelesTrak GP Data",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://celestrak.org/NORAD/documentation/gp-data-formats.php"
       },
       "option": {},
       "target": {
@@ -410,6 +410,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -460,6 +463,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
