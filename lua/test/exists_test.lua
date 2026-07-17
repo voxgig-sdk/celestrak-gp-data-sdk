@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- CelestrakGpData SDK exists test
 
 local sdk = require("celestrak-gp-data_sdk")
 
