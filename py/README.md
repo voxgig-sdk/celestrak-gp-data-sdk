@@ -124,7 +124,8 @@ Create a mock client for unit testing — no server required:
 ```python
 client = CelestrakGpDataSDK.test()
 
-# Entity ops return the bare record and raise on error.
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
 gpn = client.Gpn().list()
 # gpn contains the mock response record
 ```
@@ -220,7 +221,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -242,23 +243,23 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `arg_of_pericenter` |  |
-| `bstar` |  |
-| `classification_type` |  |
-| `eccentricity` |  |
-| `element_set_no` |  |
-| `ephemeris_type` |  |
-| `epoch` |  |
-| `inclination` |  |
-| `mean_anomaly` |  |
-| `mean_motion` |  |
-| `mean_motion_ddot` |  |
-| `mean_motion_dot` |  |
-| `norad_cat_id` |  |
-| `object_id` |  |
-| `object_name` |  |
-| `ra_of_asc_node` |  |
-| `rev_at_epoch` |  |
+| `ARG_OF_PERICENTER` |  |
+| `BSTAR` |  |
+| `CLASSIFICATION_TYPE` |  |
+| `ECCENTRICITY` |  |
+| `ELEMENT_SET_NO` |  |
+| `EPHEMERIS_TYPE` |  |
+| `EPOCH` |  |
+| `INCLINATION` |  |
+| `MEAN_ANOMALY` |  |
+| `MEAN_MOTION` |  |
+| `MEAN_MOTION_DDOT` |  |
+| `MEAN_MOTION_DOT` |  |
+| `NORAD_CAT_ID` |  |
+| `OBJECT_ID` |  |
+| `OBJECT_NAME` |  |
+| `RA_OF_ASC_NODE` |  |
+| `REV_AT_EPOCH` |  |
 
 Operations: List.
 
@@ -283,23 +284,23 @@ Create an instance: `gpn = client.Gpn()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `arg_of_pericenter` | `float` |  |
-| `bstar` | `float` |  |
-| `classification_type` | `str` |  |
-| `eccentricity` | `float` |  |
-| `element_set_no` | `int` |  |
-| `ephemeris_type` | `int` |  |
-| `epoch` | `str` |  |
-| `inclination` | `float` |  |
-| `mean_anomaly` | `float` |  |
-| `mean_motion` | `float` |  |
-| `mean_motion_ddot` | `float` |  |
-| `mean_motion_dot` | `float` |  |
-| `norad_cat_id` | `int` |  |
-| `object_id` | `str` |  |
-| `object_name` | `str` |  |
-| `ra_of_asc_node` | `float` |  |
-| `rev_at_epoch` | `int` |  |
+| `ARG_OF_PERICENTER` | `float` |  |
+| `BSTAR` | `float` |  |
+| `CLASSIFICATION_TYPE` | `str` |  |
+| `ECCENTRICITY` | `float` |  |
+| `ELEMENT_SET_NO` | `int` |  |
+| `EPHEMERIS_TYPE` | `int` |  |
+| `EPOCH` | `str` |  |
+| `INCLINATION` | `float` |  |
+| `MEAN_ANOMALY` | `float` |  |
+| `MEAN_MOTION` | `float` |  |
+| `MEAN_MOTION_DDOT` | `float` |  |
+| `MEAN_MOTION_DOT` | `float` |  |
+| `NORAD_CAT_ID` | `int` |  |
+| `OBJECT_ID` | `str` |  |
+| `OBJECT_NAME` | `str` |  |
+| `RA_OF_ASC_NODE` | `float` |  |
+| `REV_AT_EPOCH` | `int` |  |
 
 #### Example: List
 

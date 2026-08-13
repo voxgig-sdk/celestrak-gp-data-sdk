@@ -10,147 +10,147 @@
 
 # Gpn entity data model.
 #
-# @!attribute [rw] arg_of_pericenter
+# @!attribute [rw] ARG_OF_PERICENTER
 #   @return [Float, nil]
 #
-# @!attribute [rw] bstar
+# @!attribute [rw] BSTAR
 #   @return [Float, nil]
 #
-# @!attribute [rw] classification_type
+# @!attribute [rw] CLASSIFICATION_TYPE
 #   @return [String, nil]
 #
-# @!attribute [rw] eccentricity
+# @!attribute [rw] ECCENTRICITY
 #   @return [Float, nil]
 #
-# @!attribute [rw] element_set_no
+# @!attribute [rw] ELEMENT_SET_NO
 #   @return [Integer, nil]
 #
-# @!attribute [rw] ephemeris_type
+# @!attribute [rw] EPHEMERIS_TYPE
 #   @return [Integer, nil]
 #
-# @!attribute [rw] epoch
+# @!attribute [rw] EPOCH
 #   @return [String, nil]
 #
-# @!attribute [rw] inclination
+# @!attribute [rw] INCLINATION
 #   @return [Float, nil]
 #
-# @!attribute [rw] mean_anomaly
+# @!attribute [rw] MEAN_ANOMALY
 #   @return [Float, nil]
 #
-# @!attribute [rw] mean_motion
+# @!attribute [rw] MEAN_MOTION
 #   @return [Float, nil]
 #
-# @!attribute [rw] mean_motion_ddot
+# @!attribute [rw] MEAN_MOTION_DDOT
 #   @return [Float, nil]
 #
-# @!attribute [rw] mean_motion_dot
+# @!attribute [rw] MEAN_MOTION_DOT
 #   @return [Float, nil]
 #
-# @!attribute [rw] norad_cat_id
+# @!attribute [rw] NORAD_CAT_ID
 #   @return [Integer, nil]
 #
-# @!attribute [rw] object_id
+# @!attribute [rw] OBJECT_ID
 #   @return [String, nil]
 #
-# @!attribute [rw] object_name
+# @!attribute [rw] OBJECT_NAME
 #   @return [String, nil]
 #
-# @!attribute [rw] ra_of_asc_node
+# @!attribute [rw] RA_OF_ASC_NODE
 #   @return [Float, nil]
 #
-# @!attribute [rw] rev_at_epoch
+# @!attribute [rw] REV_AT_EPOCH
 #   @return [Integer, nil]
 Gpn = Struct.new(
-  :arg_of_pericenter,
-  :bstar,
-  :classification_type,
-  :eccentricity,
-  :element_set_no,
-  :ephemeris_type,
-  :epoch,
-  :inclination,
-  :mean_anomaly,
-  :mean_motion,
-  :mean_motion_ddot,
-  :mean_motion_dot,
-  :norad_cat_id,
-  :object_id,
-  :object_name,
-  :ra_of_asc_node,
-  :rev_at_epoch,
+  :ARG_OF_PERICENTER,
+  :BSTAR,
+  :CLASSIFICATION_TYPE,
+  :ECCENTRICITY,
+  :ELEMENT_SET_NO,
+  :EPHEMERIS_TYPE,
+  :EPOCH,
+  :INCLINATION,
+  :MEAN_ANOMALY,
+  :MEAN_MOTION,
+  :MEAN_MOTION_DDOT,
+  :MEAN_MOTION_DOT,
+  :NORAD_CAT_ID,
+  :OBJECT_ID,
+  :OBJECT_NAME,
+  :RA_OF_ASC_NODE,
+  :REV_AT_EPOCH,
   keyword_init: true
 )
 
 # Request payload for Gpn#list.
 #
-# @!attribute [rw] arg_of_pericenter
+# @!attribute [rw] ARG_OF_PERICENTER
 #   @return [Float, nil]
 #
-# @!attribute [rw] bstar
+# @!attribute [rw] BSTAR
 #   @return [Float, nil]
 #
-# @!attribute [rw] classification_type
+# @!attribute [rw] CLASSIFICATION_TYPE
 #   @return [String, nil]
 #
-# @!attribute [rw] eccentricity
+# @!attribute [rw] ECCENTRICITY
 #   @return [Float, nil]
 #
-# @!attribute [rw] element_set_no
+# @!attribute [rw] ELEMENT_SET_NO
 #   @return [Integer, nil]
 #
-# @!attribute [rw] ephemeris_type
+# @!attribute [rw] EPHEMERIS_TYPE
 #   @return [Integer, nil]
 #
-# @!attribute [rw] epoch
+# @!attribute [rw] EPOCH
 #   @return [String, nil]
 #
-# @!attribute [rw] inclination
+# @!attribute [rw] INCLINATION
 #   @return [Float, nil]
 #
-# @!attribute [rw] mean_anomaly
+# @!attribute [rw] MEAN_ANOMALY
 #   @return [Float, nil]
 #
-# @!attribute [rw] mean_motion
+# @!attribute [rw] MEAN_MOTION
 #   @return [Float, nil]
 #
-# @!attribute [rw] mean_motion_ddot
+# @!attribute [rw] MEAN_MOTION_DDOT
 #   @return [Float, nil]
 #
-# @!attribute [rw] mean_motion_dot
+# @!attribute [rw] MEAN_MOTION_DOT
 #   @return [Float, nil]
 #
-# @!attribute [rw] norad_cat_id
+# @!attribute [rw] NORAD_CAT_ID
 #   @return [Integer, nil]
 #
-# @!attribute [rw] object_id
+# @!attribute [rw] OBJECT_ID
 #   @return [String, nil]
 #
-# @!attribute [rw] object_name
+# @!attribute [rw] OBJECT_NAME
 #   @return [String, nil]
 #
-# @!attribute [rw] ra_of_asc_node
+# @!attribute [rw] RA_OF_ASC_NODE
 #   @return [Float, nil]
 #
-# @!attribute [rw] rev_at_epoch
+# @!attribute [rw] REV_AT_EPOCH
 #   @return [Integer, nil]
 GpnListMatch = Struct.new(
-  :arg_of_pericenter,
-  :bstar,
-  :classification_type,
-  :eccentricity,
-  :element_set_no,
-  :ephemeris_type,
-  :epoch,
-  :inclination,
-  :mean_anomaly,
-  :mean_motion,
-  :mean_motion_ddot,
-  :mean_motion_dot,
-  :norad_cat_id,
-  :object_id,
-  :object_name,
-  :ra_of_asc_node,
-  :rev_at_epoch,
+  :ARG_OF_PERICENTER,
+  :BSTAR,
+  :CLASSIFICATION_TYPE,
+  :ECCENTRICITY,
+  :ELEMENT_SET_NO,
+  :EPHEMERIS_TYPE,
+  :EPOCH,
+  :INCLINATION,
+  :MEAN_ANOMALY,
+  :MEAN_MOTION,
+  :MEAN_MOTION_DDOT,
+  :MEAN_MOTION_DOT,
+  :NORAD_CAT_ID,
+  :OBJECT_ID,
+  :OBJECT_NAME,
+  :RA_OF_ASC_NODE,
+  :REV_AT_EPOCH,
   keyword_init: true
 )
 

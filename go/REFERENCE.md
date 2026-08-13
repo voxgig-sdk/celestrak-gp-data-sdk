@@ -98,23 +98,23 @@ fmt.Println(gpn.GetName()) // "gpn"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `arg_of_pericenter` | `float64` | No |  |
-| `bstar` | `float64` | No |  |
-| `classification_type` | `string` | No |  |
-| `eccentricity` | `float64` | No |  |
-| `element_set_no` | `int` | No |  |
-| `ephemeris_type` | `int` | No |  |
-| `epoch` | `string` | No |  |
-| `inclination` | `float64` | No |  |
-| `mean_anomaly` | `float64` | No |  |
-| `mean_motion` | `float64` | No |  |
-| `mean_motion_ddot` | `float64` | No |  |
-| `mean_motion_dot` | `float64` | No |  |
-| `norad_cat_id` | `int` | No |  |
-| `object_id` | `string` | No |  |
-| `object_name` | `string` | No |  |
-| `ra_of_asc_node` | `float64` | No |  |
-| `rev_at_epoch` | `int` | No |  |
+| `ARG_OF_PERICENTER` | `float64` | No |  |
+| `BSTAR` | `float64` | No |  |
+| `CLASSIFICATION_TYPE` | `string` | No |  |
+| `ECCENTRICITY` | `float64` | No |  |
+| `ELEMENT_SET_NO` | `int` | No |  |
+| `EPHEMERIS_TYPE` | `int` | No |  |
+| `EPOCH` | `string` | No |  |
+| `INCLINATION` | `float64` | No |  |
+| `MEAN_ANOMALY` | `float64` | No |  |
+| `MEAN_MOTION` | `float64` | No |  |
+| `MEAN_MOTION_DDOT` | `float64` | No |  |
+| `MEAN_MOTION_DOT` | `float64` | No |  |
+| `NORAD_CAT_ID` | `int` | No |  |
+| `OBJECT_ID` | `string` | No |  |
+| `OBJECT_NAME` | `string` | No |  |
+| `RA_OF_ASC_NODE` | `float64` | No |  |
+| `REV_AT_EPOCH` | `int` | No |  |
 
 ### Operations
 

@@ -62,8 +62,8 @@ function makeCtrl(explain: boolean) {
 // Overrides configuration values with environment variables if available
 function envOverride(m: Record<string, any>) {
   if (
-    'TRUE' === process.env.CELESTRAKGPDATA_TEST_LIVE ||
-    'TRUE' === process.env.CELESTRAKGPDATA_TEST_OVERRIDE
+    'TRUE' === process.env.CELESTRAK_GP_DATA_TEST_LIVE ||
+    'TRUE' === process.env.CELESTRAK_GP_DATA_TEST_OVERRIDE
   ) {
     Object.entries(m).map(n => {
       let envval = process.env[n[0]]
@@ -74,7 +74,7 @@ function envOverride(m: Record<string, any>) {
     })
   }
 
-  m.CELESTRAKGPDATA_TEST_EXPLAIN = process.env.CELESTRAKGPDATA_TEST_EXPLAIN || m.CELESTRAKGPDATA_TEST_EXPLAIN
+  m.CELESTRAK_GP_DATA_TEST_EXPLAIN = process.env.CELESTRAK_GP_DATA_TEST_EXPLAIN || m.CELESTRAK_GP_DATA_TEST_EXPLAIN
 
   return m
 }

@@ -6,42 +6,42 @@
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 
 export interface Gpn {
-  arg_of_pericenter?: number
-  bstar?: number
-  classification_type?: string
-  eccentricity?: number
-  element_set_no?: number
-  ephemeris_type?: number
-  epoch?: string
-  inclination?: number
-  mean_anomaly?: number
-  mean_motion?: number
-  mean_motion_ddot?: number
-  mean_motion_dot?: number
-  norad_cat_id?: number
-  object_id?: string
-  object_name?: string
-  ra_of_asc_node?: number
-  rev_at_epoch?: number
+  ARG_OF_PERICENTER?: number
+  BSTAR?: number
+  CLASSIFICATION_TYPE?: string
+  ECCENTRICITY?: number
+  ELEMENT_SET_NO?: number
+  EPHEMERIS_TYPE?: number
+  EPOCH?: string
+  INCLINATION?: number
+  MEAN_ANOMALY?: number
+  MEAN_MOTION?: number
+  MEAN_MOTION_DDOT?: number
+  MEAN_MOTION_DOT?: number
+  NORAD_CAT_ID?: number
+  OBJECT_ID?: string
+  OBJECT_NAME?: string
+  RA_OF_ASC_NODE?: number
+  REV_AT_EPOCH?: number
 }
 
 export interface GpnListMatch {
-  arg_of_pericenter?: number
-  bstar?: number
-  classification_type?: string
-  eccentricity?: number
-  element_set_no?: number
-  ephemeris_type?: number
-  epoch?: string
-  inclination?: number
-  mean_anomaly?: number
-  mean_motion?: number
-  mean_motion_ddot?: number
-  mean_motion_dot?: number
-  norad_cat_id?: number
-  object_id?: string
-  object_name?: string
-  ra_of_asc_node?: number
-  rev_at_epoch?: number
+  ARG_OF_PERICENTER?: number
+  BSTAR?: number
+  CLASSIFICATION_TYPE?: string
+  ECCENTRICITY?: number
+  ELEMENT_SET_NO?: number
+  EPHEMERIS_TYPE?: number
+  EPOCH?: string
+  INCLINATION?: number
+  MEAN_ANOMALY?: number
+  MEAN_MOTION?: number
+  MEAN_MOTION_DDOT?: number
+  MEAN_MOTION_DOT?: number
+  NORAD_CAT_ID?: number
+  OBJECT_ID?: string
+  OBJECT_NAME?: string
+  RA_OF_ASC_NODE?: number
+  REV_AT_EPOCH?: number
 }
 

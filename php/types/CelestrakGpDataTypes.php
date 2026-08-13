@@ -15,44 +15,44 @@ declare(strict_types=1);
 /** Gpn entity data model. */
 class Gpn
 {
-    public ?float $arg_of_pericenter = null;
-    public ?float $bstar = null;
-    public ?string $classification_type = null;
-    public ?float $eccentricity = null;
-    public ?int $element_set_no = null;
-    public ?int $ephemeris_type = null;
-    public ?string $epoch = null;
-    public ?float $inclination = null;
-    public ?float $mean_anomaly = null;
-    public ?float $mean_motion = null;
-    public ?float $mean_motion_ddot = null;
-    public ?float $mean_motion_dot = null;
-    public ?int $norad_cat_id = null;
-    public ?string $object_id = null;
-    public ?string $object_name = null;
-    public ?float $ra_of_asc_node = null;
-    public ?int $rev_at_epoch = null;
+    public ?float $ARG_OF_PERICENTER = null;
+    public ?float $BSTAR = null;
+    public ?string $CLASSIFICATION_TYPE = null;
+    public ?float $ECCENTRICITY = null;
+    public ?int $ELEMENT_SET_NO = null;
+    public ?int $EPHEMERIS_TYPE = null;
+    public ?string $EPOCH = null;
+    public ?float $INCLINATION = null;
+    public ?float $MEAN_ANOMALY = null;
+    public ?float $MEAN_MOTION = null;
+    public ?float $MEAN_MOTION_DDOT = null;
+    public ?float $MEAN_MOTION_DOT = null;
+    public ?int $NORAD_CAT_ID = null;
+    public ?string $OBJECT_ID = null;
+    public ?string $OBJECT_NAME = null;
+    public ?float $RA_OF_ASC_NODE = null;
+    public ?int $REV_AT_EPOCH = null;
 }
 
 /** Request payload for Gpn#list. */
 class GpnListMatch
 {
-    public ?float $arg_of_pericenter = null;
-    public ?float $bstar = null;
-    public ?string $classification_type = null;
-    public ?float $eccentricity = null;
-    public ?int $element_set_no = null;
-    public ?int $ephemeris_type = null;
-    public ?string $epoch = null;
-    public ?float $inclination = null;
-    public ?float $mean_anomaly = null;
-    public ?float $mean_motion = null;
-    public ?float $mean_motion_ddot = null;
-    public ?float $mean_motion_dot = null;
-    public ?int $norad_cat_id = null;
-    public ?string $object_id = null;
-    public ?string $object_name = null;
-    public ?float $ra_of_asc_node = null;
-    public ?int $rev_at_epoch = null;
+    public ?float $ARG_OF_PERICENTER = null;
+    public ?float $BSTAR = null;
+    public ?string $CLASSIFICATION_TYPE = null;
+    public ?float $ECCENTRICITY = null;
+    public ?int $ELEMENT_SET_NO = null;
+    public ?int $EPHEMERIS_TYPE = null;
+    public ?string $EPOCH = null;
+    public ?float $INCLINATION = null;
+    public ?float $MEAN_ANOMALY = null;
+    public ?float $MEAN_MOTION = null;
+    public ?float $MEAN_MOTION_DDOT = null;
+    public ?float $MEAN_MOTION_DOT = null;
+    public ?int $NORAD_CAT_ID = null;
+    public ?string $OBJECT_ID = null;
+    public ?string $OBJECT_NAME = null;
+    public ?float $RA_OF_ASC_NODE = null;
+    public ?int $REV_AT_EPOCH = null;
 }
 

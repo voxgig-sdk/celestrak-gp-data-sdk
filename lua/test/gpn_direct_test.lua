@@ -61,11 +61,11 @@ function gpn_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["CELESTRAKGPDATA_TEST_GPN_ENTID"] = {},
-    ["CELESTRAKGPDATA_TEST_LIVE"] = "FALSE",
+    ["CELESTRAK_GP_DATA_TEST_GPN_ENTID"] = {},
+    ["CELESTRAK_GP_DATA_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["CELESTRAKGPDATA_TEST_LIVE"] == "TRUE"
+  local live = env["CELESTRAK_GP_DATA_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

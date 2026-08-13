@@ -260,23 +260,23 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"arg_of_pericenter"` |  |
-| `"bstar"` |  |
-| `"classification_type"` |  |
-| `"eccentricity"` |  |
-| `"element_set_no"` |  |
-| `"ephemeris_type"` |  |
-| `"epoch"` |  |
-| `"inclination"` |  |
-| `"mean_anomaly"` |  |
-| `"mean_motion"` |  |
-| `"mean_motion_ddot"` |  |
-| `"mean_motion_dot"` |  |
-| `"norad_cat_id"` |  |
-| `"object_id"` |  |
-| `"object_name"` |  |
-| `"ra_of_asc_node"` |  |
-| `"rev_at_epoch"` |  |
+| `"ARG_OF_PERICENTER"` |  |
+| `"BSTAR"` |  |
+| `"CLASSIFICATION_TYPE"` |  |
+| `"ECCENTRICITY"` |  |
+| `"ELEMENT_SET_NO"` |  |
+| `"EPHEMERIS_TYPE"` |  |
+| `"EPOCH"` |  |
+| `"INCLINATION"` |  |
+| `"MEAN_ANOMALY"` |  |
+| `"MEAN_MOTION"` |  |
+| `"MEAN_MOTION_DDOT"` |  |
+| `"MEAN_MOTION_DOT"` |  |
+| `"NORAD_CAT_ID"` |  |
+| `"OBJECT_ID"` |  |
+| `"OBJECT_NAME"` |  |
+| `"RA_OF_ASC_NODE"` |  |
+| `"REV_AT_EPOCH"` |  |
 
 Operations: List.
 
@@ -301,23 +301,23 @@ Create an instance: `gpn := client.Gpn(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `arg_of_pericenter` | `float64` |  |
-| `bstar` | `float64` |  |
-| `classification_type` | `string` |  |
-| `eccentricity` | `float64` |  |
-| `element_set_no` | `int` |  |
-| `ephemeris_type` | `int` |  |
-| `epoch` | `string` |  |
-| `inclination` | `float64` |  |
-| `mean_anomaly` | `float64` |  |
-| `mean_motion` | `float64` |  |
-| `mean_motion_ddot` | `float64` |  |
-| `mean_motion_dot` | `float64` |  |
-| `norad_cat_id` | `int` |  |
-| `object_id` | `string` |  |
-| `object_name` | `string` |  |
-| `ra_of_asc_node` | `float64` |  |
-| `rev_at_epoch` | `int` |  |
+| `ARG_OF_PERICENTER` | `float64` |  |
+| `BSTAR` | `float64` |  |
+| `CLASSIFICATION_TYPE` | `string` |  |
+| `ECCENTRICITY` | `float64` |  |
+| `ELEMENT_SET_NO` | `int` |  |
+| `EPHEMERIS_TYPE` | `int` |  |
+| `EPOCH` | `string` |  |
+| `INCLINATION` | `float64` |  |
+| `MEAN_ANOMALY` | `float64` |  |
+| `MEAN_MOTION` | `float64` |  |
+| `MEAN_MOTION_DDOT` | `float64` |  |
+| `MEAN_MOTION_DOT` | `float64` |  |
+| `NORAD_CAT_ID` | `int` |  |
+| `OBJECT_ID` | `string` |  |
+| `OBJECT_NAME` | `string` |  |
+| `RA_OF_ASC_NODE` | `float64` |  |
+| `REV_AT_EPOCH` | `int` |  |
 
 #### Example: List
 

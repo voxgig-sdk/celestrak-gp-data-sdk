@@ -6,87 +6,87 @@ main: kit: entity: gpn: {
 
   fields: [
     {
-      name: "arg_of_pericenter"
+      name: "ARG_OF_PERICENTER"
       req: false
       type: "`$NUMBER`"
     }
     {
-      name: "bstar"
+      name: "BSTAR"
       req: false
       type: "`$NUMBER`"
     }
     {
-      name: "classification_type"
+      name: "CLASSIFICATION_TYPE"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "eccentricity"
+      name: "ECCENTRICITY"
       req: false
       type: "`$NUMBER`"
     }
     {
-      name: "element_set_no"
+      name: "ELEMENT_SET_NO"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "ephemeris_type"
+      name: "EPHEMERIS_TYPE"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "epoch"
+      name: "EPOCH"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "inclination"
+      name: "INCLINATION"
       req: false
       type: "`$NUMBER`"
     }
     {
-      name: "mean_anomaly"
+      name: "MEAN_ANOMALY"
       req: false
       type: "`$NUMBER`"
     }
     {
-      name: "mean_motion"
+      name: "MEAN_MOTION"
       req: false
       type: "`$NUMBER`"
     }
     {
-      name: "mean_motion_ddot"
+      name: "MEAN_MOTION_DDOT"
       req: false
       type: "`$NUMBER`"
     }
     {
-      name: "mean_motion_dot"
+      name: "MEAN_MOTION_DOT"
       req: false
       type: "`$NUMBER`"
     }
     {
-      name: "norad_cat_id"
+      name: "NORAD_CAT_ID"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "object_id"
+      name: "OBJECT_ID"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "object_name"
+      name: "OBJECT_NAME"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "ra_of_asc_node"
+      name: "RA_OF_ASC_NODE"
       req: false
       type: "`$NUMBER`"
     }
     {
-      name: "rev_at_epoch"
+      name: "REV_AT_EPOCH"
       req: false
       type: "`$INTEGER`"
     }

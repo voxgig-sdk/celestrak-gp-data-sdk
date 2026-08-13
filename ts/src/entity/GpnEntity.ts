@@ -37,7 +37,7 @@ class GpnEntity extends CelestrakGpDataEntityBase<Gpn> {
 
 
 
-  async list(this: any, reqmatch?: GpnListMatch, ctrl?: Control): Promise<Gpn[]> {
+  async list(this: any, reqmatch?: GpnListMatch, ctrl?: Control): Promise<GpnEntity[]> {
 
     const utility = this._utility
 

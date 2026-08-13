@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import CelestrakGpDataSDK
-from core.error import CelestrakGpDataError
-from core.result import CelestrakGpDataResult
-from core.response import CelestrakGpDataResponse
-from core.spec import CelestrakGpDataSpec
-from feature.base_feature import CelestrakGpDataBaseFeature
+from projectname_sdk.core.error import CelestrakGpDataError
+from projectname_sdk.core.result import CelestrakGpDataResult
+from projectname_sdk.core.response import CelestrakGpDataResponse
+from projectname_sdk.core.spec import CelestrakGpDataSpec
+from projectname_sdk.feature.base_feature import CelestrakGpDataBaseFeature
 
 
 def _client():

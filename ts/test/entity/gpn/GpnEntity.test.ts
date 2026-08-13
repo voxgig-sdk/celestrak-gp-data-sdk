@@ -26,8 +26,8 @@ import {
 describe('GpnEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when CELESTRAKGPDATA_TEST_LIVE=TRUE.
-  afterEach(liveDelay('CELESTRAKGPDATA_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when CELESTRAK_GP_DATA_TEST_LIVE=TRUE.
+  afterEach(liveDelay('CELESTRAK_GP_DATA_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = CelestrakGpDataSDK.test()
@@ -63,7 +63,7 @@ describe('GpnEntity', async () => {
     const gpn_ref01_ent = client.Gpn()
     const gpn_ref01_match: any = {}
 
-    const gpn_ref01_list = await gpn_ref01_ent.list(gpn_ref01_match)
+    const gpn_ref01_list = (await gpn_ref01_ent.list(gpn_ref01_match)).map((e: any) => e.data())
 
 
   })

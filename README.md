@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = CelestrakGpDataSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = CelestrakGpDataSDK.test({
+  entity: {
+    gpn: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const gpns = await client.Gpn().list()
-// gpns is an array of bare Gpn records populated with mock data
+// gpns is an array of Gpn entities, populated with mock data
+// — call gpns[0].data() for the record itself
 console.log(gpns)
 ```
 
@@ -110,7 +119,7 @@ import { CelestrakGpDataSDK } from '@voxgig-sdk/celestrak-gp-data'
 
 const client = new CelestrakGpDataSDK()
 
-// List all gpns (returns Gpn[])
+// List all gpns (returns GpnEntity[] — .data() for the record)
 const gpns = await client.Gpn().list()
 for (const gpn of gpns) {
   console.log(gpn)
@@ -343,6 +352,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://celestrak.org](https://celestrak.org)
 

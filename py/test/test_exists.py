@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# CelestrakGpData SDK exists test
 
 import pytest
 from celestrakgpdata_sdk import CelestrakGpDataSDK

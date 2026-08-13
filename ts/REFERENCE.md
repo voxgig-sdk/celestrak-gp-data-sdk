@@ -116,23 +116,23 @@ const gpn = client.Gpn()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `arg_of_pericenter` | `number` | No |  |
-| `bstar` | `number` | No |  |
-| `classification_type` | `string` | No |  |
-| `eccentricity` | `number` | No |  |
-| `element_set_no` | `number` | No |  |
-| `ephemeris_type` | `number` | No |  |
-| `epoch` | `string` | No |  |
-| `inclination` | `number` | No |  |
-| `mean_anomaly` | `number` | No |  |
-| `mean_motion` | `number` | No |  |
-| `mean_motion_ddot` | `number` | No |  |
-| `mean_motion_dot` | `number` | No |  |
-| `norad_cat_id` | `number` | No |  |
-| `object_id` | `string` | No |  |
-| `object_name` | `string` | No |  |
-| `ra_of_asc_node` | `number` | No |  |
-| `rev_at_epoch` | `number` | No |  |
+| `ARG_OF_PERICENTER` | `number` | No |  |
+| `BSTAR` | `number` | No |  |
+| `CLASSIFICATION_TYPE` | `string` | No |  |
+| `ECCENTRICITY` | `number` | No |  |
+| `ELEMENT_SET_NO` | `number` | No |  |
+| `EPHEMERIS_TYPE` | `number` | No |  |
+| `EPOCH` | `string` | No |  |
+| `INCLINATION` | `number` | No |  |
+| `MEAN_ANOMALY` | `number` | No |  |
+| `MEAN_MOTION` | `number` | No |  |
+| `MEAN_MOTION_DDOT` | `number` | No |  |
+| `MEAN_MOTION_DOT` | `number` | No |  |
+| `NORAD_CAT_ID` | `number` | No |  |
+| `OBJECT_ID` | `string` | No |  |
+| `OBJECT_NAME` | `string` | No |  |
+| `RA_OF_ASC_NODE` | `number` | No |  |
+| `REV_AT_EPOCH` | `number` | No |  |
 
 ### Operations
 

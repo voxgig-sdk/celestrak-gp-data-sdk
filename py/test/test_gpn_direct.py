@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from celestrakgpdata_sdk.utility.voxgig_struct import voxgig_struct as vs
 from celestrakgpdata_sdk import CelestrakGpDataSDK
-from core import helpers
+from celestrakgpdata_sdk.core import helpers
 from test import runner
 
 
@@ -58,11 +58,11 @@ def _gpn_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "CELESTRAKGPDATA_TEST_GPN_ENTID": {},
-        "CELESTRAKGPDATA_TEST_LIVE": "FALSE",
+        "CELESTRAK_GP_DATA_TEST_GPN_ENTID": {},
+        "CELESTRAK_GP_DATA_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("CELESTRAKGPDATA_TEST_LIVE") == "TRUE"
+    live = env.get("CELESTRAK_GP_DATA_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

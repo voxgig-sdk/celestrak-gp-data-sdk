@@ -23,8 +23,8 @@ module CelestrakGpDataTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("CELESTRAKGPDATA_TEST_LIVE")
-    override = getenv("CELESTRAKGPDATA_TEST_OVERRIDE")
+    live = getenv("CELESTRAK_GP_DATA_TEST_LIVE")
+    override = getenv("CELESTRAK_GP_DATA_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module CelestrakGpDataTestRunner
       end
     end
 
-    explain = getenv("CELESTRAKGPDATA_TEST_EXPLAIN")
-    m["CELESTRAKGPDATA_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("CELESTRAK_GP_DATA_TEST_EXPLAIN")
+    m["CELESTRAK_GP_DATA_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

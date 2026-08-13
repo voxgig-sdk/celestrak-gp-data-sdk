@@ -93,23 +93,23 @@ gpn = client.Gpn
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `arg_of_pericenter` | `Float` | No |  |
-| `bstar` | `Float` | No |  |
-| `classification_type` | `String` | No |  |
-| `eccentricity` | `Float` | No |  |
-| `element_set_no` | `Integer` | No |  |
-| `ephemeris_type` | `Integer` | No |  |
-| `epoch` | `String` | No |  |
-| `inclination` | `Float` | No |  |
-| `mean_anomaly` | `Float` | No |  |
-| `mean_motion` | `Float` | No |  |
-| `mean_motion_ddot` | `Float` | No |  |
-| `mean_motion_dot` | `Float` | No |  |
-| `norad_cat_id` | `Integer` | No |  |
-| `object_id` | `String` | No |  |
-| `object_name` | `String` | No |  |
-| `ra_of_asc_node` | `Float` | No |  |
-| `rev_at_epoch` | `Integer` | No |  |
+| `ARG_OF_PERICENTER` | `Float` | No |  |
+| `BSTAR` | `Float` | No |  |
+| `CLASSIFICATION_TYPE` | `String` | No |  |
+| `ECCENTRICITY` | `Float` | No |  |
+| `ELEMENT_SET_NO` | `Integer` | No |  |
+| `EPHEMERIS_TYPE` | `Integer` | No |  |
+| `EPOCH` | `String` | No |  |
+| `INCLINATION` | `Float` | No |  |
+| `MEAN_ANOMALY` | `Float` | No |  |
+| `MEAN_MOTION` | `Float` | No |  |
+| `MEAN_MOTION_DDOT` | `Float` | No |  |
+| `MEAN_MOTION_DOT` | `Float` | No |  |
+| `NORAD_CAT_ID` | `Integer` | No |  |
+| `OBJECT_ID` | `String` | No |  |
+| `OBJECT_NAME` | `String` | No |  |
+| `RA_OF_ASC_NODE` | `Float` | No |  |
+| `REV_AT_EPOCH` | `Integer` | No |  |
 
 ### Operations
 

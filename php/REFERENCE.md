@@ -92,23 +92,23 @@ $gpn = $client->Gpn();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `arg_of_pericenter` | `float` | No |  |
-| `bstar` | `float` | No |  |
-| `classification_type` | `string` | No |  |
-| `eccentricity` | `float` | No |  |
-| `element_set_no` | `int` | No |  |
-| `ephemeris_type` | `int` | No |  |
-| `epoch` | `string` | No |  |
-| `inclination` | `float` | No |  |
-| `mean_anomaly` | `float` | No |  |
-| `mean_motion` | `float` | No |  |
-| `mean_motion_ddot` | `float` | No |  |
-| `mean_motion_dot` | `float` | No |  |
-| `norad_cat_id` | `int` | No |  |
-| `object_id` | `string` | No |  |
-| `object_name` | `string` | No |  |
-| `ra_of_asc_node` | `float` | No |  |
-| `rev_at_epoch` | `int` | No |  |
+| `ARG_OF_PERICENTER` | `float` | No |  |
+| `BSTAR` | `float` | No |  |
+| `CLASSIFICATION_TYPE` | `string` | No |  |
+| `ECCENTRICITY` | `float` | No |  |
+| `ELEMENT_SET_NO` | `int` | No |  |
+| `EPHEMERIS_TYPE` | `int` | No |  |
+| `EPOCH` | `string` | No |  |
+| `INCLINATION` | `float` | No |  |
+| `MEAN_ANOMALY` | `float` | No |  |
+| `MEAN_MOTION` | `float` | No |  |
+| `MEAN_MOTION_DDOT` | `float` | No |  |
+| `MEAN_MOTION_DOT` | `float` | No |  |
+| `NORAD_CAT_ID` | `int` | No |  |
+| `OBJECT_ID` | `string` | No |  |
+| `OBJECT_NAME` | `string` | No |  |
+| `RA_OF_ASC_NODE` | `float` | No |  |
+| `REV_AT_EPOCH` | `int` | No |  |
 
 ### Operations
 

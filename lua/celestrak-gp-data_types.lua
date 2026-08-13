@@ -7,42 +7,42 @@
 -- edit by hand.
 
 ---@class Gpn
----@field arg_of_pericenter? number
----@field bstar? number
----@field classification_type? string
----@field eccentricity? number
----@field element_set_no? number
----@field ephemeris_type? number
----@field epoch? string
----@field inclination? number
----@field mean_anomaly? number
----@field mean_motion? number
----@field mean_motion_ddot? number
----@field mean_motion_dot? number
----@field norad_cat_id? number
----@field object_id? string
----@field object_name? string
----@field ra_of_asc_node? number
----@field rev_at_epoch? number
+---@field ARG_OF_PERICENTER? number
+---@field BSTAR? number
+---@field CLASSIFICATION_TYPE? string
+---@field ECCENTRICITY? number
+---@field ELEMENT_SET_NO? number
+---@field EPHEMERIS_TYPE? number
+---@field EPOCH? string
+---@field INCLINATION? number
+---@field MEAN_ANOMALY? number
+---@field MEAN_MOTION? number
+---@field MEAN_MOTION_DDOT? number
+---@field MEAN_MOTION_DOT? number
+---@field NORAD_CAT_ID? number
+---@field OBJECT_ID? string
+---@field OBJECT_NAME? string
+---@field RA_OF_ASC_NODE? number
+---@field REV_AT_EPOCH? number
 
 ---@class GpnListMatch
----@field arg_of_pericenter? number
----@field bstar? number
----@field classification_type? string
----@field eccentricity? number
----@field element_set_no? number
----@field ephemeris_type? number
----@field epoch? string
----@field inclination? number
----@field mean_anomaly? number
----@field mean_motion? number
----@field mean_motion_ddot? number
----@field mean_motion_dot? number
----@field norad_cat_id? number
----@field object_id? string
----@field object_name? string
----@field ra_of_asc_node? number
----@field rev_at_epoch? number
+---@field ARG_OF_PERICENTER? number
+---@field BSTAR? number
+---@field CLASSIFICATION_TYPE? string
+---@field ECCENTRICITY? number
+---@field ELEMENT_SET_NO? number
+---@field EPHEMERIS_TYPE? number
+---@field EPOCH? string
+---@field INCLINATION? number
+---@field MEAN_ANOMALY? number
+---@field MEAN_MOTION? number
+---@field MEAN_MOTION_DDOT? number
+---@field MEAN_MOTION_DOT? number
+---@field NORAD_CAT_ID? number
+---@field OBJECT_ID? string
+---@field OBJECT_NAME? string
+---@field RA_OF_ASC_NODE? number
+---@field REV_AT_EPOCH? number
 
 local M = {}
 

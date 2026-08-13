@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import CelestrakGpDataControl
-from core.error import CelestrakGpDataError
-from core.result import CelestrakGpDataResult
-from core.spec import CelestrakGpDataSpec
+from projectname_sdk.config import make_config
+from projectname_sdk.features import _make_feature
+from projectname_sdk.core.control import CelestrakGpDataControl
+from projectname_sdk.core.error import CelestrakGpDataError
+from projectname_sdk.core.result import CelestrakGpDataResult
+from projectname_sdk.core.spec import CelestrakGpDataSpec
 
 
 # True when this SDK was generated with the named feature.

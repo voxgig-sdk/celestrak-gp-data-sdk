@@ -43,7 +43,7 @@ local gpns, err = client:Gpn():list()
 if err then error(err) end
 
 for _, item in ipairs(gpns) do
-  print(item["classification_type"])
+  print(item["CLASSIFICATION_TYPE"])
 end
 ```
 
@@ -218,9 +218,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local gpn, err = client:Gpn():load()
+    local gpn, err = client:Gpn():list()
     if err then error(err) end
-    -- gpn is the loaded record
+    -- gpn is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -231,23 +231,23 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `arg_of_pericenter` |  |
-| `bstar` |  |
-| `classification_type` |  |
-| `eccentricity` |  |
-| `element_set_no` |  |
-| `ephemeris_type` |  |
-| `epoch` |  |
-| `inclination` |  |
-| `mean_anomaly` |  |
-| `mean_motion` |  |
-| `mean_motion_ddot` |  |
-| `mean_motion_dot` |  |
-| `norad_cat_id` |  |
-| `object_id` |  |
-| `object_name` |  |
-| `ra_of_asc_node` |  |
-| `rev_at_epoch` |  |
+| `ARG_OF_PERICENTER` |  |
+| `BSTAR` |  |
+| `CLASSIFICATION_TYPE` |  |
+| `ECCENTRICITY` |  |
+| `ELEMENT_SET_NO` |  |
+| `EPHEMERIS_TYPE` |  |
+| `EPOCH` |  |
+| `INCLINATION` |  |
+| `MEAN_ANOMALY` |  |
+| `MEAN_MOTION` |  |
+| `MEAN_MOTION_DDOT` |  |
+| `MEAN_MOTION_DOT` |  |
+| `NORAD_CAT_ID` |  |
+| `OBJECT_ID` |  |
+| `OBJECT_NAME` |  |
+| `RA_OF_ASC_NODE` |  |
+| `REV_AT_EPOCH` |  |
 
 Operations: List.
 
@@ -272,23 +272,23 @@ Create an instance: `local gpn = client:Gpn(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `arg_of_pericenter` | `number` |  |
-| `bstar` | `number` |  |
-| `classification_type` | `string` |  |
-| `eccentricity` | `number` |  |
-| `element_set_no` | `number` |  |
-| `ephemeris_type` | `number` |  |
-| `epoch` | `string` |  |
-| `inclination` | `number` |  |
-| `mean_anomaly` | `number` |  |
-| `mean_motion` | `number` |  |
-| `mean_motion_ddot` | `number` |  |
-| `mean_motion_dot` | `number` |  |
-| `norad_cat_id` | `number` |  |
-| `object_id` | `string` |  |
-| `object_name` | `string` |  |
-| `ra_of_asc_node` | `number` |  |
-| `rev_at_epoch` | `number` |  |
+| `ARG_OF_PERICENTER` | `number` |  |
+| `BSTAR` | `number` |  |
+| `CLASSIFICATION_TYPE` | `string` |  |
+| `ECCENTRICITY` | `number` |  |
+| `ELEMENT_SET_NO` | `number` |  |
+| `EPHEMERIS_TYPE` | `number` |  |
+| `EPOCH` | `string` |  |
+| `INCLINATION` | `number` |  |
+| `MEAN_ANOMALY` | `number` |  |
+| `MEAN_MOTION` | `number` |  |
+| `MEAN_MOTION_DDOT` | `number` |  |
+| `MEAN_MOTION_DOT` | `number` |  |
+| `NORAD_CAT_ID` | `number` |  |
+| `OBJECT_ID` | `string` |  |
+| `OBJECT_NAME` | `string` |  |
+| `RA_OF_ASC_NODE` | `number` |  |
+| `REV_AT_EPOCH` | `number` |  |
 
 #### Example: List
 

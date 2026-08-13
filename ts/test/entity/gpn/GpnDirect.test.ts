@@ -19,11 +19,15 @@ import {
 describe('GpnDirect', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when CELESTRAKGPDATA_TEST_LIVE=TRUE.
-  afterEach(liveDelay('CELESTRAKGPDATA_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when CELESTRAK_GP_DATA_TEST_LIVE=TRUE.
+  afterEach(liveDelay('CELESTRAK_GP_DATA_TEST_LIVE'))
 
   test('direct-exists', async () => {
     const sdk = new CelestrakGpDataSDK({
+      // Concrete base: a live construction must satisfy any server
+      // variables a templated base URL declares; overriding base with a
+      // literal (as the direct flow tests do) sidesteps the requirement.
+      base: 'http://localhost:8080',
       system: { fetch: async () => ({}) }
     })
     assert('function' === typeof sdk.direct)
@@ -77,17 +81,17 @@ function directSetup(mockres?: any) {
   const calls: any[] = []
 
   const env = envOverride({
-    'CELESTRAKGPDATA_TEST_GPN_ENTID': {},
-    'CELESTRAKGPDATA_TEST_LIVE': 'FALSE',
+    'CELESTRAK_GP_DATA_TEST_GPN_ENTID': {},
+    'CELESTRAK_GP_DATA_TEST_LIVE': 'FALSE',
   })
 
-  const live = 'TRUE' === env.CELESTRAKGPDATA_TEST_LIVE
+  const live = 'TRUE' === env.CELESTRAK_GP_DATA_TEST_LIVE
 
   if (live) {
     const client = new CelestrakGpDataSDK({
     })
 
-    let idmap: any = env['CELESTRAKGPDATA_TEST_GPN_ENTID']
+    let idmap: any = env['CELESTRAK_GP_DATA_TEST_GPN_ENTID']
     if ('string' === typeof idmap && idmap.startsWith('{')) {
       idmap = JSON.parse(idmap)
     }
