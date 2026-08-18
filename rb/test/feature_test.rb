@@ -15,7 +15,7 @@ require_relative "../CelestrakGpData_sdk"
 module CelestrakGpDataFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = CelestrakGpDataConfig.make_config["feature"]
+    f = CelestrakGpDataConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

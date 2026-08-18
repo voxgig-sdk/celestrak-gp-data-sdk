@@ -28,7 +28,7 @@ class CelestrakGpDataSDK
     utility = CelestrakGpDataUtility.new
     @_utility = utility
 
-    config = CelestrakGpDataConfig.make_config
+    config = CelestrakGpDataConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

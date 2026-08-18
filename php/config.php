@@ -5,6 +5,29 @@ declare(strict_types=1);
 
 class CelestrakGpDataConfig
 {
+    /** @var array<string,mixed>|null */
+    private static ?array $shared_config = null;
+
+    /**
+     * Return the process-wide config, built once on first use. The SDK reads
+     * the config on every request and never writes to it, so one instance is
+     * shared by every client rather than rebuilt per client.
+     *
+     * PHP arrays are copy-on-write, so callers that do mutate the result get
+     * their own copy and cannot disturb the shared one.
+     */
+    public static function shared_config(): array
+    {
+        if (self::$shared_config === null) {
+            self::$shared_config = self::make_config();
+        }
+        return self::$shared_config;
+    }
+
+    /**
+     * Build a fresh, fully materialised config array. Every call rebuilds the
+     * whole structure, so prefer shared_config unless you need a private copy.
+     */
     public static function make_config(): array
     {
         return [
@@ -31,123 +54,72 @@ class CelestrakGpDataConfig
         'gpn' => [
           'fields' => [
             [
-              'active' => true,
               'name' => 'ARG_OF_PERICENTER',
-              'req' => false,
               'type' => '`$NUMBER`',
-              'index$' => 0,
             ],
             [
-              'active' => true,
               'name' => 'BSTAR',
-              'req' => false,
               'type' => '`$NUMBER`',
-              'index$' => 1,
             ],
             [
-              'active' => true,
               'name' => 'CLASSIFICATION_TYPE',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 2,
             ],
             [
-              'active' => true,
               'name' => 'ECCENTRICITY',
-              'req' => false,
               'type' => '`$NUMBER`',
-              'index$' => 3,
             ],
             [
-              'active' => true,
               'name' => 'ELEMENT_SET_NO',
-              'req' => false,
               'type' => '`$INTEGER`',
-              'index$' => 4,
             ],
             [
-              'active' => true,
               'name' => 'EPHEMERIS_TYPE',
-              'req' => false,
               'type' => '`$INTEGER`',
-              'index$' => 5,
             ],
             [
-              'active' => true,
               'name' => 'EPOCH',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 6,
             ],
             [
-              'active' => true,
               'name' => 'INCLINATION',
-              'req' => false,
               'type' => '`$NUMBER`',
-              'index$' => 7,
             ],
             [
-              'active' => true,
               'name' => 'MEAN_ANOMALY',
-              'req' => false,
               'type' => '`$NUMBER`',
-              'index$' => 8,
             ],
             [
-              'active' => true,
               'name' => 'MEAN_MOTION',
-              'req' => false,
               'type' => '`$NUMBER`',
-              'index$' => 9,
             ],
             [
-              'active' => true,
               'name' => 'MEAN_MOTION_DDOT',
-              'req' => false,
               'type' => '`$NUMBER`',
-              'index$' => 10,
             ],
             [
-              'active' => true,
               'name' => 'MEAN_MOTION_DOT',
-              'req' => false,
               'type' => '`$NUMBER`',
-              'index$' => 11,
             ],
             [
-              'active' => true,
               'name' => 'NORAD_CAT_ID',
-              'req' => false,
               'type' => '`$INTEGER`',
-              'index$' => 12,
             ],
             [
-              'active' => true,
               'name' => 'OBJECT_ID',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 13,
             ],
             [
-              'active' => true,
               'name' => 'OBJECT_NAME',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 14,
             ],
             [
-              'active' => true,
               'name' => 'RA_OF_ASC_NODE',
-              'req' => false,
               'type' => '`$NUMBER`',
-              'index$' => 15,
             ],
             [
-              'active' => true,
               'name' => 'REV_AT_EPOCH',
-              'req' => false,
               'type' => '`$INTEGER`',
-              'index$' => 16,
             ],
           ],
           'name' => 'gpn',
@@ -157,52 +129,41 @@ class CelestrakGpDataConfig
               'name' => 'list',
               'points' => [
                 [
-                  'active' => true,
                   'args' => [
                     'query' => [
                       [
-                        'active' => true,
                         'example' => '25544',
                         'kind' => 'query',
                         'name' => 'catnr',
                         'orig' => 'catnr',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'example' => 'json',
                         'kind' => 'query',
                         'name' => 'format',
                         'orig' => 'format',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'example' => 'stations',
                         'kind' => 'query',
                         'name' => 'group',
                         'orig' => 'group',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'example' => '1998-067A',
                         'kind' => 'query',
                         'name' => 'intde',
                         'orig' => 'intde',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'example' => 'ISS',
                         'kind' => 'query',
                         'name' => 'name',
                         'orig' => 'name',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                     ],
@@ -228,10 +189,8 @@ class CelestrakGpDataConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 0,
                 ],
               ],
-              'key$' => 'list',
             ],
           ],
           'relations' => [

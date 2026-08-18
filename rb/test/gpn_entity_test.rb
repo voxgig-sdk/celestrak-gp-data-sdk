@@ -33,7 +33,7 @@ class GpnEntityTest < Minitest::Test
     assert_equal 3, seen.length
 
     # Inbound: streaming active -> yields each item from the feature.
-    cfg = CelestrakGpDataConfig.make_config
+    cfg = CelestrakGpDataConfig.shared_config
     if cfg["feature"].is_a?(Hash) && cfg["feature"].key?("streaming")
       sdk = CelestrakGpDataSDK.test(seed, { "feature" => { "streaming" => { "active" => true } } })
       got = []

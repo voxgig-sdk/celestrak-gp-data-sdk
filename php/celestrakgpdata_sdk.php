@@ -40,7 +40,7 @@ class CelestrakGpDataSDK
         $utility = new CelestrakGpDataUtility();
         $this->_utility = $utility;
 
-        $config = CelestrakGpDataConfig::make_config();
+        $config = CelestrakGpDataConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,
