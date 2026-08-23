@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -287,23 +287,23 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `ARG_OF_PERICENTER` |  |
-| `BSTAR` |  |
-| `CLASSIFICATION_TYPE` |  |
-| `ECCENTRICITY` |  |
-| `ELEMENT_SET_NO` |  |
-| `EPHEMERIS_TYPE` |  |
-| `EPOCH` |  |
-| `INCLINATION` |  |
-| `MEAN_ANOMALY` |  |
-| `MEAN_MOTION` |  |
-| `MEAN_MOTION_DDOT` |  |
-| `MEAN_MOTION_DOT` |  |
-| `NORAD_CAT_ID` |  |
-| `OBJECT_ID` |  |
-| `OBJECT_NAME` |  |
-| `RA_OF_ASC_NODE` |  |
-| `REV_AT_EPOCH` |  |
+| `ARG_OF_PERICENTER` | Argument of perigee in degrees |
+| `BSTAR` | BSTAR drag term |
+| `CLASSIFICATION_TYPE` | Classification (U=Unclassified, C=Classified, S=Secret) |
+| `ECCENTRICITY` | Orbital eccentricity |
+| `ELEMENT_SET_NO` | Element set number |
+| `EPHEMERIS_TYPE` | Ephemeris type |
+| `EPOCH` | Epoch time of the orbital elements |
+| `INCLINATION` | Inclination in degrees |
+| `MEAN_ANOMALY` | Mean anomaly in degrees |
+| `MEAN_MOTION` | Mean motion in revolutions per day |
+| `MEAN_MOTION_DDOT` | Second derivative of mean motion |
+| `MEAN_MOTION_DOT` | First derivative of mean motion |
+| `NORAD_CAT_ID` | NORAD catalog number |
+| `OBJECT_ID` | International designator |
+| `OBJECT_NAME` | Name of the space object |
+| `RA_OF_ASC_NODE` | Right ascension of ascending node in degrees |
+| `REV_AT_EPOCH` | Revolution number at epoch |
 
 Operations: list.
 
@@ -328,23 +328,23 @@ Create an instance: `const gpn = client.Gpn()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ARG_OF_PERICENTER` | `number` |  |
-| `BSTAR` | `number` |  |
-| `CLASSIFICATION_TYPE` | `string` |  |
-| `ECCENTRICITY` | `number` |  |
-| `ELEMENT_SET_NO` | `number` |  |
-| `EPHEMERIS_TYPE` | `number` |  |
-| `EPOCH` | `string` |  |
-| `INCLINATION` | `number` |  |
-| `MEAN_ANOMALY` | `number` |  |
-| `MEAN_MOTION` | `number` |  |
-| `MEAN_MOTION_DDOT` | `number` |  |
-| `MEAN_MOTION_DOT` | `number` |  |
-| `NORAD_CAT_ID` | `number` |  |
-| `OBJECT_ID` | `string` |  |
-| `OBJECT_NAME` | `string` |  |
-| `RA_OF_ASC_NODE` | `number` |  |
-| `REV_AT_EPOCH` | `number` |  |
+| `ARG_OF_PERICENTER` | `number` | Argument of perigee in degrees |
+| `BSTAR` | `number` | BSTAR drag term |
+| `CLASSIFICATION_TYPE` | `string` | Classification (U=Unclassified, C=Classified, S=Secret) |
+| `ECCENTRICITY` | `number` | Orbital eccentricity |
+| `ELEMENT_SET_NO` | `number` | Element set number |
+| `EPHEMERIS_TYPE` | `number` | Ephemeris type |
+| `EPOCH` | `string` | Epoch time of the orbital elements |
+| `INCLINATION` | `number` | Inclination in degrees |
+| `MEAN_ANOMALY` | `number` | Mean anomaly in degrees |
+| `MEAN_MOTION` | `number` | Mean motion in revolutions per day |
+| `MEAN_MOTION_DDOT` | `number` | Second derivative of mean motion |
+| `MEAN_MOTION_DOT` | `number` | First derivative of mean motion |
+| `NORAD_CAT_ID` | `number` | NORAD catalog number |
+| `OBJECT_ID` | `string` | International designator |
+| `OBJECT_NAME` | `string` | Name of the space object |
+| `RA_OF_ASC_NODE` | `number` | Right ascension of ascending node in degrees |
+| `REV_AT_EPOCH` | `number` | Revolution number at epoch |
 
 #### Example: List
 

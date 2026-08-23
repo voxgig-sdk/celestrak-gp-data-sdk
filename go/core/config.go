@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "CelestrakGpData",
+			"slug": "celestrak-gp-data",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -33,70 +36,87 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "ARG_OF_PERICENTER",
+						"short": "Argument of perigee in degrees",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "BSTAR",
+						"short": "BSTAR drag term",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "CLASSIFICATION_TYPE",
+						"short": "Classification (U=Unclassified, C=Classified, S=Secret)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "ECCENTRICITY",
+						"short": "Orbital eccentricity",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "ELEMENT_SET_NO",
+						"short": "Element set number",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "EPHEMERIS_TYPE",
+						"short": "Ephemeris type",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "EPOCH",
+						"short": "Epoch time of the orbital elements",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "INCLINATION",
+						"short": "Inclination in degrees",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "MEAN_ANOMALY",
+						"short": "Mean anomaly in degrees",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "MEAN_MOTION",
+						"short": "Mean motion in revolutions per day",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "MEAN_MOTION_DDOT",
+						"short": "Second derivative of mean motion",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "MEAN_MOTION_DOT",
+						"short": "First derivative of mean motion",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "NORAD_CAT_ID",
+						"short": "NORAD catalog number",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "OBJECT_ID",
+						"short": "International designator",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "OBJECT_NAME",
+						"short": "Name of the space object",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "RA_OF_ASC_NODE",
+						"short": "Right ascension of ascending node in degrees",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "REV_AT_EPOCH",
+						"short": "Revolution number at epoch",
 						"type": "`$INTEGER`",
 					},
 				},

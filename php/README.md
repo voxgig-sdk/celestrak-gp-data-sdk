@@ -247,23 +247,23 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `ARG_OF_PERICENTER` |  |
-| `BSTAR` |  |
-| `CLASSIFICATION_TYPE` |  |
-| `ECCENTRICITY` |  |
-| `ELEMENT_SET_NO` |  |
-| `EPHEMERIS_TYPE` |  |
-| `EPOCH` |  |
-| `INCLINATION` |  |
-| `MEAN_ANOMALY` |  |
-| `MEAN_MOTION` |  |
-| `MEAN_MOTION_DDOT` |  |
-| `MEAN_MOTION_DOT` |  |
-| `NORAD_CAT_ID` |  |
-| `OBJECT_ID` |  |
-| `OBJECT_NAME` |  |
-| `RA_OF_ASC_NODE` |  |
-| `REV_AT_EPOCH` |  |
+| `ARG_OF_PERICENTER` | Argument of perigee in degrees |
+| `BSTAR` | BSTAR drag term |
+| `CLASSIFICATION_TYPE` | Classification (U=Unclassified, C=Classified, S=Secret) |
+| `ECCENTRICITY` | Orbital eccentricity |
+| `ELEMENT_SET_NO` | Element set number |
+| `EPHEMERIS_TYPE` | Ephemeris type |
+| `EPOCH` | Epoch time of the orbital elements |
+| `INCLINATION` | Inclination in degrees |
+| `MEAN_ANOMALY` | Mean anomaly in degrees |
+| `MEAN_MOTION` | Mean motion in revolutions per day |
+| `MEAN_MOTION_DDOT` | Second derivative of mean motion |
+| `MEAN_MOTION_DOT` | First derivative of mean motion |
+| `NORAD_CAT_ID` | NORAD catalog number |
+| `OBJECT_ID` | International designator |
+| `OBJECT_NAME` | Name of the space object |
+| `RA_OF_ASC_NODE` | Right ascension of ascending node in degrees |
+| `REV_AT_EPOCH` | Revolution number at epoch |
 
 Operations: List.
 
@@ -288,23 +288,23 @@ Create an instance: `$gpn = $client->Gpn();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ARG_OF_PERICENTER` | `float` |  |
-| `BSTAR` | `float` |  |
-| `CLASSIFICATION_TYPE` | `string` |  |
-| `ECCENTRICITY` | `float` |  |
-| `ELEMENT_SET_NO` | `int` |  |
-| `EPHEMERIS_TYPE` | `int` |  |
-| `EPOCH` | `string` |  |
-| `INCLINATION` | `float` |  |
-| `MEAN_ANOMALY` | `float` |  |
-| `MEAN_MOTION` | `float` |  |
-| `MEAN_MOTION_DDOT` | `float` |  |
-| `MEAN_MOTION_DOT` | `float` |  |
-| `NORAD_CAT_ID` | `int` |  |
-| `OBJECT_ID` | `string` |  |
-| `OBJECT_NAME` | `string` |  |
-| `RA_OF_ASC_NODE` | `float` |  |
-| `REV_AT_EPOCH` | `int` |  |
+| `ARG_OF_PERICENTER` | `float` | Argument of perigee in degrees |
+| `BSTAR` | `float` | BSTAR drag term |
+| `CLASSIFICATION_TYPE` | `string` | Classification (U=Unclassified, C=Classified, S=Secret) |
+| `ECCENTRICITY` | `float` | Orbital eccentricity |
+| `ELEMENT_SET_NO` | `int` | Element set number |
+| `EPHEMERIS_TYPE` | `int` | Ephemeris type |
+| `EPOCH` | `string` | Epoch time of the orbital elements |
+| `INCLINATION` | `float` | Inclination in degrees |
+| `MEAN_ANOMALY` | `float` | Mean anomaly in degrees |
+| `MEAN_MOTION` | `float` | Mean motion in revolutions per day |
+| `MEAN_MOTION_DDOT` | `float` | Second derivative of mean motion |
+| `MEAN_MOTION_DOT` | `float` | First derivative of mean motion |
+| `NORAD_CAT_ID` | `int` | NORAD catalog number |
+| `OBJECT_ID` | `string` | International designator |
+| `OBJECT_NAME` | `string` | Name of the space object |
+| `RA_OF_ASC_NODE` | `float` | Right ascension of ascending node in degrees |
+| `REV_AT_EPOCH` | `int` | Revolution number at epoch |
 
 #### Example: List
 

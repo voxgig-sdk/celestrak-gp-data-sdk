@@ -33,6 +33,9 @@ class CelestrakGpDataConfig
         return [
             "main" => [
                 "name" => "CelestrakGpData",
+                "slug" => "celestrak-gp-data",
+                "version" => "0.0.1",
+                "target" => "php",
             ],
             "feature" => [
                 "test" => [
@@ -55,70 +58,87 @@ class CelestrakGpDataConfig
           'fields' => [
             [
               'name' => 'ARG_OF_PERICENTER',
+              'short' => 'Argument of perigee in degrees',
               'type' => '`$NUMBER`',
             ],
             [
               'name' => 'BSTAR',
+              'short' => 'BSTAR drag term',
               'type' => '`$NUMBER`',
             ],
             [
               'name' => 'CLASSIFICATION_TYPE',
+              'short' => 'Classification (U=Unclassified, C=Classified, S=Secret)',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'ECCENTRICITY',
+              'short' => 'Orbital eccentricity',
               'type' => '`$NUMBER`',
             ],
             [
               'name' => 'ELEMENT_SET_NO',
+              'short' => 'Element set number',
               'type' => '`$INTEGER`',
             ],
             [
               'name' => 'EPHEMERIS_TYPE',
+              'short' => 'Ephemeris type',
               'type' => '`$INTEGER`',
             ],
             [
               'name' => 'EPOCH',
+              'short' => 'Epoch time of the orbital elements',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'INCLINATION',
+              'short' => 'Inclination in degrees',
               'type' => '`$NUMBER`',
             ],
             [
               'name' => 'MEAN_ANOMALY',
+              'short' => 'Mean anomaly in degrees',
               'type' => '`$NUMBER`',
             ],
             [
               'name' => 'MEAN_MOTION',
+              'short' => 'Mean motion in revolutions per day',
               'type' => '`$NUMBER`',
             ],
             [
               'name' => 'MEAN_MOTION_DDOT',
+              'short' => 'Second derivative of mean motion',
               'type' => '`$NUMBER`',
             ],
             [
               'name' => 'MEAN_MOTION_DOT',
+              'short' => 'First derivative of mean motion',
               'type' => '`$NUMBER`',
             ],
             [
               'name' => 'NORAD_CAT_ID',
+              'short' => 'NORAD catalog number',
               'type' => '`$INTEGER`',
             ],
             [
               'name' => 'OBJECT_ID',
+              'short' => 'International designator',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'OBJECT_NAME',
+              'short' => 'Name of the space object',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'RA_OF_ASC_NODE',
+              'short' => 'Right ascension of ascending node in degrees',
               'type' => '`$NUMBER`',
             ],
             [
               'name' => 'REV_AT_EPOCH',
+              'short' => 'Revolution number at epoch',
               'type' => '`$INTEGER`',
             ],
           ],

@@ -98,23 +98,23 @@ fmt.Println(gpn.GetName()) // "gpn"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ARG_OF_PERICENTER` | `float64` | No |  |
-| `BSTAR` | `float64` | No |  |
-| `CLASSIFICATION_TYPE` | `string` | No |  |
-| `ECCENTRICITY` | `float64` | No |  |
-| `ELEMENT_SET_NO` | `int` | No |  |
-| `EPHEMERIS_TYPE` | `int` | No |  |
-| `EPOCH` | `string` | No |  |
-| `INCLINATION` | `float64` | No |  |
-| `MEAN_ANOMALY` | `float64` | No |  |
-| `MEAN_MOTION` | `float64` | No |  |
-| `MEAN_MOTION_DDOT` | `float64` | No |  |
-| `MEAN_MOTION_DOT` | `float64` | No |  |
-| `NORAD_CAT_ID` | `int` | No |  |
-| `OBJECT_ID` | `string` | No |  |
-| `OBJECT_NAME` | `string` | No |  |
-| `RA_OF_ASC_NODE` | `float64` | No |  |
-| `REV_AT_EPOCH` | `int` | No |  |
+| `ARG_OF_PERICENTER` | `float64` | No | Argument of perigee in degrees |
+| `BSTAR` | `float64` | No | BSTAR drag term |
+| `CLASSIFICATION_TYPE` | `string` | No | Classification (U=Unclassified, C=Classified, S=Secret) |
+| `ECCENTRICITY` | `float64` | No | Orbital eccentricity |
+| `ELEMENT_SET_NO` | `int` | No | Element set number |
+| `EPHEMERIS_TYPE` | `int` | No | Ephemeris type |
+| `EPOCH` | `string` | No | Epoch time of the orbital elements |
+| `INCLINATION` | `float64` | No | Inclination in degrees |
+| `MEAN_ANOMALY` | `float64` | No | Mean anomaly in degrees |
+| `MEAN_MOTION` | `float64` | No | Mean motion in revolutions per day |
+| `MEAN_MOTION_DDOT` | `float64` | No | Second derivative of mean motion |
+| `MEAN_MOTION_DOT` | `float64` | No | First derivative of mean motion |
+| `NORAD_CAT_ID` | `int` | No | NORAD catalog number |
+| `OBJECT_ID` | `string` | No | International designator |
+| `OBJECT_NAME` | `string` | No | Name of the space object |
+| `RA_OF_ASC_NODE` | `float64` | No | Right ascension of ascending node in degrees |
+| `REV_AT_EPOCH` | `int` | No | Revolution number at epoch |
 
 ### Operations
 

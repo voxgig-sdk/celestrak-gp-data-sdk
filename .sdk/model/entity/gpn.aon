@@ -8,86 +8,103 @@ main: kit: entity: gpn: {
     {
       name: "ARG_OF_PERICENTER"
       req: false
+      short: "Argument of perigee in degrees"
       type: "`$NUMBER`"
     }
     {
       name: "BSTAR"
       req: false
+      short: "BSTAR drag term"
       type: "`$NUMBER`"
     }
     {
       name: "CLASSIFICATION_TYPE"
       req: false
+      short: "Classification (U=Unclassified, C=Classified, S=Secret)"
       type: "`$STRING`"
     }
     {
       name: "ECCENTRICITY"
       req: false
+      short: "Orbital eccentricity"
       type: "`$NUMBER`"
     }
     {
       name: "ELEMENT_SET_NO"
       req: false
+      short: "Element set number"
       type: "`$INTEGER`"
     }
     {
       name: "EPHEMERIS_TYPE"
       req: false
+      short: "Ephemeris type"
       type: "`$INTEGER`"
     }
     {
       name: "EPOCH"
       req: false
+      short: "Epoch time of the orbital elements"
       type: "`$STRING`"
     }
     {
       name: "INCLINATION"
       req: false
+      short: "Inclination in degrees"
       type: "`$NUMBER`"
     }
     {
       name: "MEAN_ANOMALY"
       req: false
+      short: "Mean anomaly in degrees"
       type: "`$NUMBER`"
     }
     {
       name: "MEAN_MOTION"
       req: false
+      short: "Mean motion in revolutions per day"
       type: "`$NUMBER`"
     }
     {
       name: "MEAN_MOTION_DDOT"
       req: false
+      short: "Second derivative of mean motion"
       type: "`$NUMBER`"
     }
     {
       name: "MEAN_MOTION_DOT"
       req: false
+      short: "First derivative of mean motion"
       type: "`$NUMBER`"
     }
     {
       name: "NORAD_CAT_ID"
       req: false
+      short: "NORAD catalog number"
       type: "`$INTEGER`"
     }
     {
       name: "OBJECT_ID"
       req: false
+      short: "International designator"
       type: "`$STRING`"
     }
     {
       name: "OBJECT_NAME"
       req: false
+      short: "Name of the space object"
       type: "`$STRING`"
     }
     {
       name: "RA_OF_ASC_NODE"
       req: false
+      short: "Right ascension of ascending node in degrees"
       type: "`$NUMBER`"
     }
     {
       name: "REV_AT_EPOCH"
       req: false
+      short: "Revolution number at epoch"
       type: "`$INTEGER`"
     }
   ]

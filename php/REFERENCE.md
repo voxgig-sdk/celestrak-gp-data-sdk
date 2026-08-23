@@ -92,23 +92,23 @@ $gpn = $client->Gpn();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ARG_OF_PERICENTER` | `float` | No |  |
-| `BSTAR` | `float` | No |  |
-| `CLASSIFICATION_TYPE` | `string` | No |  |
-| `ECCENTRICITY` | `float` | No |  |
-| `ELEMENT_SET_NO` | `int` | No |  |
-| `EPHEMERIS_TYPE` | `int` | No |  |
-| `EPOCH` | `string` | No |  |
-| `INCLINATION` | `float` | No |  |
-| `MEAN_ANOMALY` | `float` | No |  |
-| `MEAN_MOTION` | `float` | No |  |
-| `MEAN_MOTION_DDOT` | `float` | No |  |
-| `MEAN_MOTION_DOT` | `float` | No |  |
-| `NORAD_CAT_ID` | `int` | No |  |
-| `OBJECT_ID` | `string` | No |  |
-| `OBJECT_NAME` | `string` | No |  |
-| `RA_OF_ASC_NODE` | `float` | No |  |
-| `REV_AT_EPOCH` | `int` | No |  |
+| `ARG_OF_PERICENTER` | `float` | No | Argument of perigee in degrees |
+| `BSTAR` | `float` | No | BSTAR drag term |
+| `CLASSIFICATION_TYPE` | `string` | No | Classification (U=Unclassified, C=Classified, S=Secret) |
+| `ECCENTRICITY` | `float` | No | Orbital eccentricity |
+| `ELEMENT_SET_NO` | `int` | No | Element set number |
+| `EPHEMERIS_TYPE` | `int` | No | Ephemeris type |
+| `EPOCH` | `string` | No | Epoch time of the orbital elements |
+| `INCLINATION` | `float` | No | Inclination in degrees |
+| `MEAN_ANOMALY` | `float` | No | Mean anomaly in degrees |
+| `MEAN_MOTION` | `float` | No | Mean motion in revolutions per day |
+| `MEAN_MOTION_DDOT` | `float` | No | Second derivative of mean motion |
+| `MEAN_MOTION_DOT` | `float` | No | First derivative of mean motion |
+| `NORAD_CAT_ID` | `int` | No | NORAD catalog number |
+| `OBJECT_ID` | `string` | No | International designator |
+| `OBJECT_NAME` | `string` | No | Name of the space object |
+| `RA_OF_ASC_NODE` | `float` | No | Right ascension of ascending node in degrees |
+| `REV_AT_EPOCH` | `int` | No | Revolution number at epoch |
 
 ### Operations
 

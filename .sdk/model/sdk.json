@@ -36,102 +36,119 @@
               "active": true,
               "name": "ARG_OF_PERICENTER",
               "req": false,
+              "short": "Argument of perigee in degrees",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "BSTAR",
               "req": false,
+              "short": "BSTAR drag term",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "CLASSIFICATION_TYPE",
               "req": false,
+              "short": "Classification (U=Unclassified, C=Classified, S=Secret)",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "ECCENTRICITY",
               "req": false,
+              "short": "Orbital eccentricity",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "ELEMENT_SET_NO",
               "req": false,
+              "short": "Element set number",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "EPHEMERIS_TYPE",
               "req": false,
+              "short": "Ephemeris type",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "EPOCH",
               "req": false,
+              "short": "Epoch time of the orbital elements",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "INCLINATION",
               "req": false,
+              "short": "Inclination in degrees",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "MEAN_ANOMALY",
               "req": false,
+              "short": "Mean anomaly in degrees",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "MEAN_MOTION",
               "req": false,
+              "short": "Mean motion in revolutions per day",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "MEAN_MOTION_DDOT",
               "req": false,
+              "short": "Second derivative of mean motion",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "MEAN_MOTION_DOT",
               "req": false,
+              "short": "First derivative of mean motion",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "NORAD_CAT_ID",
               "req": false,
+              "short": "NORAD catalog number",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "OBJECT_ID",
               "req": false,
+              "short": "International designator",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "OBJECT_NAME",
               "req": false,
+              "short": "Name of the space object",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "RA_OF_ASC_NODE",
               "req": false,
+              "short": "Right ascension of ascending node in degrees",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "REV_AT_EPOCH",
               "req": false,
+              "short": "Revolution number at epoch",
               "type": "`$INTEGER`"
             }
           ],
