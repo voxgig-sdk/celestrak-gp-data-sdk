@@ -28,6 +28,7 @@ module CelestrakGpDataConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
