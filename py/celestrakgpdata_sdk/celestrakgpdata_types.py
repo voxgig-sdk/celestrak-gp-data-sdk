@@ -37,20 +37,8 @@ class Gpn(TypedDict, total=False):
 
 
 class GpnListMatch(TypedDict, total=False):
-    ARG_OF_PERICENTER: float
-    BSTAR: float
-    CLASSIFICATION_TYPE: str
-    ECCENTRICITY: float
-    ELEMENT_SET_NO: int
-    EPHEMERIS_TYPE: int
-    EPOCH: str
-    INCLINATION: float
-    MEAN_ANOMALY: float
-    MEAN_MOTION: float
-    MEAN_MOTION_DDOT: float
-    MEAN_MOTION_DOT: float
-    NORAD_CAT_ID: int
-    OBJECT_ID: str
-    OBJECT_NAME: str
-    RA_OF_ASC_NODE: float
-    REV_AT_EPOCH: int
+    catnr: str
+    format: str
+    group: str
+    intde: str
+    name: str

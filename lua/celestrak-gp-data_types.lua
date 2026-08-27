@@ -26,23 +26,11 @@
 ---@field REV_AT_EPOCH? number
 
 ---@class GpnListMatch
----@field ARG_OF_PERICENTER? number
----@field BSTAR? number
----@field CLASSIFICATION_TYPE? string
----@field ECCENTRICITY? number
----@field ELEMENT_SET_NO? number
----@field EPHEMERIS_TYPE? number
----@field EPOCH? string
----@field INCLINATION? number
----@field MEAN_ANOMALY? number
----@field MEAN_MOTION? number
----@field MEAN_MOTION_DDOT? number
----@field MEAN_MOTION_DOT? number
----@field NORAD_CAT_ID? number
----@field OBJECT_ID? string
----@field OBJECT_NAME? string
----@field RA_OF_ASC_NODE? number
----@field REV_AT_EPOCH? number
+---@field catnr? string
+---@field format? string
+---@field group? string
+---@field intde? string
+---@field name? string
 
 local M = {}
 

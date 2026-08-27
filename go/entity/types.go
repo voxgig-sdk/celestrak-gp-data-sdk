@@ -35,23 +35,11 @@ type Gpn struct {
 
 // GpnListMatch is the typed request payload for Gpn.ListTyped.
 type GpnListMatch struct {
-	ARGOFPERICENTER *float64 `json:"ARG_OF_PERICENTER,omitempty"`
-	BSTAR *float64 `json:"BSTAR,omitempty"`
-	CLASSIFICATIONTYPE *string `json:"CLASSIFICATION_TYPE,omitempty"`
-	ECCENTRICITY *float64 `json:"ECCENTRICITY,omitempty"`
-	ELEMENTSETNO *int `json:"ELEMENT_SET_NO,omitempty"`
-	EPHEMERISTYPE *int `json:"EPHEMERIS_TYPE,omitempty"`
-	EPOCH *string `json:"EPOCH,omitempty"`
-	INCLINATION *float64 `json:"INCLINATION,omitempty"`
-	MEANANOMALY *float64 `json:"MEAN_ANOMALY,omitempty"`
-	MEANMOTION *float64 `json:"MEAN_MOTION,omitempty"`
-	MEANMOTIONDDOT *float64 `json:"MEAN_MOTION_DDOT,omitempty"`
-	MEANMOTIONDOT *float64 `json:"MEAN_MOTION_DOT,omitempty"`
-	NORADCATID *int `json:"NORAD_CAT_ID,omitempty"`
-	OBJECTID *string `json:"OBJECT_ID,omitempty"`
-	OBJECTNAME *string `json:"OBJECT_NAME,omitempty"`
-	RAOFASCNODE *float64 `json:"RA_OF_ASC_NODE,omitempty"`
-	REVATEPOCH *int `json:"REV_AT_EPOCH,omitempty"`
+	Catnr *string `json:"catnr,omitempty"`
+	Format *string `json:"format,omitempty"`
+	Group *string `json:"group,omitempty"`
+	Intde *string `json:"intde,omitempty"`
+	Name *string `json:"name,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the
