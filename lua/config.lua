@@ -62,6 +62,7 @@ local function make_config()
             ["type"] = "`$INTEGER`",
           },
           {
+            ["format"] = "date-time",
             ["name"] = "EPOCH",
             ["short"] = "Epoch time of the orbital elements",
             ["type"] = "`$STRING`",
@@ -166,10 +167,16 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/NORAD/elements/gp.php",
-                ["parts"] = {
-                  "NORAD",
-                  "elements",
-                  "gp.php",
+                ["segments"] = {
+                  {
+                    ["lit"] = "NORAD",
+                  },
+                  {
+                    ["lit"] = "elements",
+                  },
+                  {
+                    ["lit"] = "gp.php",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -183,6 +190,11 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "NORAD",
+                  "elements",
+                  "gp.php",
                 },
               },
             },

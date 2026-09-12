@@ -42,6 +42,7 @@ main: kit: entity: gpn: {
       type: "`$INTEGER`"
     }
     {
+      format: "date-time"
       name: "EPOCH"
       req: false
       short: "Epoch time of the orbital elements"
@@ -161,10 +162,16 @@ main: kit: entity: gpn: {
           }
           method: "GET"
           orig: "/NORAD/elements/gp.php"
-          parts: [
-            "NORAD"
-            "elements"
-            "gp.php"
+          segments: [
+            {
+              lit: "NORAD"
+            }
+            {
+              lit: "elements"
+            }
+            {
+              lit: "gp.php"
+            }
           ]
           select: {
             exist: [

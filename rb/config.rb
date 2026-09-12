@@ -74,6 +74,7 @@ module CelestrakGpDataConfig
               "type" => "`$INTEGER`",
             },
             {
+              "format" => "date-time",
               "name" => "EPOCH",
               "short" => "Epoch time of the orbital elements",
               "type" => "`$STRING`",
@@ -178,10 +179,16 @@ module CelestrakGpDataConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/NORAD/elements/gp.php",
-                  "parts" => [
-                    "NORAD",
-                    "elements",
-                    "gp.php",
+                  "segments" => [
+                    {
+                      "lit" => "NORAD",
+                    },
+                    {
+                      "lit" => "elements",
+                    },
+                    {
+                      "lit" => "gp.php",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -196,6 +203,11 @@ module CelestrakGpDataConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "NORAD",
+                    "elements",
+                    "gp.php",
+                  ],
                 },
               ],
             },
