@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { CelestrakGpDataSDK } from '@voxgig-sdk/celestrak-gp-data'
+import { CelestrakGpDataSDK } from '@voxgig-sdk/celestrak-gp-data-sdk'
 
 const client = new CelestrakGpDataSDK()
 ```
@@ -435,7 +435,7 @@ celestrak-gp-data/
 Import the SDK from the package root:
 
 ```ts
-import { CelestrakGpDataSDK } from '@voxgig-sdk/celestrak-gp-data'
+import { CelestrakGpDataSDK } from '@voxgig-sdk/celestrak-gp-data-sdk'
 ```
 
 ### Entity state
