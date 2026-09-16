@@ -4,7 +4,10 @@ declare(strict_types=1);
 // CelestrakGpData SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class CelestrakGpDataFeatures
@@ -14,8 +17,14 @@ class CelestrakGpDataFeatures
         switch ($name) {
             case "base":
                 return new CelestrakGpDataBaseFeature();
+            case "ratelimit":
+                return new CelestrakGpDataRatelimitFeature();
+            case "retry":
+                return new CelestrakGpDataRetryFeature();
             case "test":
                 return new CelestrakGpDataTestFeature();
+            case "timeout":
+                return new CelestrakGpDataTimeoutFeature();
             default:
                 return new CelestrakGpDataBaseFeature();
         }
@@ -31,7 +40,10 @@ class CelestrakGpDataFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;

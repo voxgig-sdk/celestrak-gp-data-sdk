@@ -1,12 +1,18 @@
 # CelestrakGpData SDK feature factory
 
 from celestrakgpdata_sdk.feature.base_feature import CelestrakGpDataBaseFeature
+from celestrakgpdata_sdk.feature.ratelimit_feature import CelestrakGpDataRatelimitFeature
+from celestrakgpdata_sdk.feature.retry_feature import CelestrakGpDataRetryFeature
 from celestrakgpdata_sdk.feature.test_feature import CelestrakGpDataTestFeature
+from celestrakgpdata_sdk.feature.timeout_feature import CelestrakGpDataTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: CelestrakGpDataBaseFeature(),
+    "ratelimit": lambda: CelestrakGpDataRatelimitFeature(),
+    "retry": lambda: CelestrakGpDataRetryFeature(),
     "test": lambda: CelestrakGpDataTestFeature(),
+    "timeout": lambda: CelestrakGpDataTimeoutFeature(),
 }
 
 
