@@ -105,12 +105,12 @@ local results, err = client:Gpn():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/celestrak-gp-data-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/celestrak-gp-data-sdk/releases) |
-| Python | `voxgig-sdk-celestrak-gp-data` | publish pending — [install from git tag](https://github.com/voxgig-sdk/celestrak-gp-data-sdk/releases) |
-| PHP | `voxgig-sdk/celestrak-gp-data` | publish pending — [install from git tag](https://github.com/voxgig-sdk/celestrak-gp-data-sdk/releases) |
+| TypeScript | `@voxgig-sdk/celestrak-gp-data-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/celestrak-gp-data-sdk/tags) |
+| Python | `voxgig-sdk-celestrak-gp-data` | publish pending — [install from git tag](https://github.com/voxgig-sdk/celestrak-gp-data-sdk/tags) |
+| PHP | `voxgig-sdk/celestrak-gp-data` | publish pending — [install from git tag](https://github.com/voxgig-sdk/celestrak-gp-data-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/celestrak-gp-data-sdk/go` | `go get github.com/voxgig-sdk/celestrak-gp-data-sdk/go@latest` |
-| Ruby | `voxgig-sdk-celestrak-gp-data` | publish pending — [install from git tag](https://github.com/voxgig-sdk/celestrak-gp-data-sdk/releases) |
-| Lua | `voxgig-sdk-celestrak-gp-data` | publish pending — [install from git tag](https://github.com/voxgig-sdk/celestrak-gp-data-sdk/releases) |
+| Ruby | `voxgig-sdk-celestrak-gp-data` | publish pending — [install from git tag](https://github.com/voxgig-sdk/celestrak-gp-data-sdk/tags) |
+| Lua | `voxgig-sdk-celestrak-gp-data` | publish pending — [install from git tag](https://github.com/voxgig-sdk/celestrak-gp-data-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/celestrak-gp-data-sdk/go-cli` | `go install github.com/voxgig-sdk/celestrak-gp-data-sdk/go-cli/cmd/celestrak-gp-data@latest` |
 | Go MCP server | `github.com/voxgig-sdk/celestrak-gp-data-sdk/go-mcp` | `go get github.com/voxgig-sdk/celestrak-gp-data-sdk/go-mcp@latest` |
 
