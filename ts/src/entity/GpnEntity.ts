@@ -19,7 +19,6 @@ import type {
   GpnListMatch,
 } from '../CelestrakGpDataTypes'
 
-// TODO: needs Entity superclass
 class GpnEntity extends CelestrakGpDataEntityBase<Gpn> {
 
   constructor(client: CelestrakGpDataSDK, entopts: any) {

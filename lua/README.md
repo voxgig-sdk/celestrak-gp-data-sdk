@@ -43,7 +43,7 @@ local gpns, err = client:Gpn():list()
 if err then error(err) end
 
 for _, item in ipairs(gpns) do
-  print(item["CLASSIFICATION_TYPE"])
+  print(item)
 end
 ```
 

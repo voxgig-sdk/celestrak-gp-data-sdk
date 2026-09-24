@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GpnEntity = void 0;
 const CelestrakGpDataEntityBase_1 = require("../CelestrakGpDataEntityBase");
-// TODO: needs Entity superclass
 class GpnEntity extends CelestrakGpDataEntityBase_1.CelestrakGpDataEntityBase {
     constructor(client, entopts) {
         super(client, entopts);

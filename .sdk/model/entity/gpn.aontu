@@ -1,0 +1,218 @@
+# Entity: gpn
+
+main: kit: entity: gpn: {
+
+  alias: field: {}
+
+  fields: {
+    ARG_OF_PERICENTER: {
+      h: "Arg Of Pericenter"
+      n: "ARG_OF_PERICENTER"
+      r: false
+      sh: "Argument of perigee in degrees"
+      t: "`$NUMBER`"
+    }
+    BSTAR: {
+      h: "Bstar"
+      n: "BSTAR"
+      r: false
+      sh: "BSTAR drag term"
+      t: "`$NUMBER`"
+    }
+    CLASSIFICATION_TYPE: {
+      h: "Classification Type"
+      n: "CLASSIFICATION_TYPE"
+      r: false
+      sh: "Classification (U=Unclassified, C=Classified, S=Secret)"
+      t: "`$STRING`"
+    }
+    ECCENTRICITY: {
+      h: "Eccentricity"
+      n: "ECCENTRICITY"
+      r: false
+      sh: "Orbital eccentricity"
+      t: "`$NUMBER`"
+    }
+    ELEMENT_SET_NO: {
+      h: "Element Set No"
+      n: "ELEMENT_SET_NO"
+      r: false
+      sh: "Element set number"
+      t: "`$INTEGER`"
+    }
+    EPHEMERIS_TYPE: {
+      h: "Ephemeris Type"
+      n: "EPHEMERIS_TYPE"
+      r: false
+      sh: "Ephemeris type"
+      t: "`$INTEGER`"
+    }
+    EPOCH: {
+      fo: "date-time"
+      h: "Epoch"
+      n: "EPOCH"
+      r: false
+      sh: "Epoch time of the orbital elements"
+      t: "`$STRING`"
+    }
+    INCLINATION: {
+      h: "Inclination"
+      n: "INCLINATION"
+      r: false
+      sh: "Inclination in degrees"
+      t: "`$NUMBER`"
+    }
+    MEAN_ANOMALY: {
+      h: "Mean Anomaly"
+      n: "MEAN_ANOMALY"
+      r: false
+      sh: "Mean anomaly in degrees"
+      t: "`$NUMBER`"
+    }
+    MEAN_MOTION: {
+      h: "Mean Motion"
+      n: "MEAN_MOTION"
+      r: false
+      sh: "Mean motion in revolutions per day"
+      t: "`$NUMBER`"
+    }
+    MEAN_MOTION_DDOT: {
+      h: "Mean Motion Ddot"
+      n: "MEAN_MOTION_DDOT"
+      r: false
+      sh: "Second derivative of mean motion"
+      t: "`$NUMBER`"
+    }
+    MEAN_MOTION_DOT: {
+      h: "Mean Motion Dot"
+      n: "MEAN_MOTION_DOT"
+      r: false
+      sh: "First derivative of mean motion"
+      t: "`$NUMBER`"
+    }
+    NORAD_CAT_ID: {
+      h: "Norad Cat Id"
+      n: "NORAD_CAT_ID"
+      r: false
+      sh: "NORAD catalog number"
+      t: "`$INTEGER`"
+    }
+    OBJECT_ID: {
+      h: "Object Id"
+      n: "OBJECT_ID"
+      r: false
+      sh: "International designator"
+      t: "`$STRING`"
+    }
+    OBJECT_NAME: {
+      h: "Object Name"
+      n: "OBJECT_NAME"
+      r: false
+      sh: "Name of the space object"
+      t: "`$STRING`"
+    }
+    RA_OF_ASC_NODE: {
+      h: "Ra Of Asc Node"
+      n: "RA_OF_ASC_NODE"
+      r: false
+      sh: "Right ascension of ascending node in degrees"
+      t: "`$NUMBER`"
+    }
+    REV_AT_EPOCH: {
+      h: "Rev At Epoch"
+      n: "REV_AT_EPOCH"
+      r: false
+      sh: "Revolution number at epoch"
+      t: "`$INTEGER`"
+    }
+  }
+
+  name: "gpn"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /NORAD/elements/gp.php"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "25544"
+                k: "query"
+                n: "catnr"
+                or: "catnr"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "json"
+                k: "query"
+                n: "format"
+                or: "format"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "stations"
+                k: "query"
+                n: "group"
+                or: "group"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "1998-067A"
+                k: "query"
+                n: "intde"
+                or: "intde"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "ISS"
+                k: "query"
+                n: "name"
+                or: "name"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/NORAD/elements/gp.php"
+          q: {
+            exist: [
+              "catnr"
+              "format"
+              "group"
+              "intde"
+              "name"
+            ]
+          }
+          s: [
+            {
+              lit: "NORAD"
+            }
+            {
+              lit: "elements"
+            }
+            {
+              lit: "gp.php"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

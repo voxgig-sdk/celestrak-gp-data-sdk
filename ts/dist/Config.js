@@ -11,19 +11,12 @@ const FEATURE_CLASS = {
     test: TestFeature_1.TestFeature,
     timeout: TimeoutFeature_1.TimeoutFeature,
 };
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS = {};
 exports.FEATURE_PLUGINS = FEATURE_PLUGINS;
 class Config {
     makeFeature(fn) {
         const fc = FEATURE_CLASS[fn];
         const fi = new fc();
-        // TODO: errors etc
         return fi;
     }
     // False for a feature added at runtime via options.extend (station's
@@ -114,89 +107,106 @@ class Config {
             "fields": [
                 {
                     "name": "ARG_OF_PERICENTER",
-                    "short": "Argument of perigee in degrees",
-                    "type": "`$NUMBER`"
+                    "title": "Arg Of Pericenter",
+                    "type": "`$NUMBER`",
+                    "short": "Argument of perigee in degrees"
                 },
                 {
                     "name": "BSTAR",
-                    "short": "BSTAR drag term",
-                    "type": "`$NUMBER`"
+                    "title": "Bstar",
+                    "type": "`$NUMBER`",
+                    "short": "BSTAR drag term"
                 },
                 {
                     "name": "CLASSIFICATION_TYPE",
-                    "short": "Classification (U=Unclassified, C=Classified, S=Secret)",
-                    "type": "`$STRING`"
+                    "title": "Classification Type",
+                    "type": "`$STRING`",
+                    "short": "Classification (U=Unclassified, C=Classified, S=Secret)"
                 },
                 {
                     "name": "ECCENTRICITY",
-                    "short": "Orbital eccentricity",
-                    "type": "`$NUMBER`"
+                    "title": "Eccentricity",
+                    "type": "`$NUMBER`",
+                    "short": "Orbital eccentricity"
                 },
                 {
                     "name": "ELEMENT_SET_NO",
-                    "short": "Element set number",
-                    "type": "`$INTEGER`"
+                    "title": "Element Set No",
+                    "type": "`$INTEGER`",
+                    "short": "Element set number"
                 },
                 {
                     "name": "EPHEMERIS_TYPE",
-                    "short": "Ephemeris type",
-                    "type": "`$INTEGER`"
+                    "title": "Ephemeris Type",
+                    "type": "`$INTEGER`",
+                    "short": "Ephemeris type"
                 },
                 {
-                    "format": "date-time",
                     "name": "EPOCH",
+                    "title": "Epoch",
+                    "type": "`$STRING`",
                     "short": "Epoch time of the orbital elements",
-                    "type": "`$STRING`"
+                    "format": "date-time"
                 },
                 {
                     "name": "INCLINATION",
-                    "short": "Inclination in degrees",
-                    "type": "`$NUMBER`"
+                    "title": "Inclination",
+                    "type": "`$NUMBER`",
+                    "short": "Inclination in degrees"
                 },
                 {
                     "name": "MEAN_ANOMALY",
-                    "short": "Mean anomaly in degrees",
-                    "type": "`$NUMBER`"
+                    "title": "Mean Anomaly",
+                    "type": "`$NUMBER`",
+                    "short": "Mean anomaly in degrees"
                 },
                 {
                     "name": "MEAN_MOTION",
-                    "short": "Mean motion in revolutions per day",
-                    "type": "`$NUMBER`"
+                    "title": "Mean Motion",
+                    "type": "`$NUMBER`",
+                    "short": "Mean motion in revolutions per day"
                 },
                 {
                     "name": "MEAN_MOTION_DDOT",
-                    "short": "Second derivative of mean motion",
-                    "type": "`$NUMBER`"
+                    "title": "Mean Motion Ddot",
+                    "type": "`$NUMBER`",
+                    "short": "Second derivative of mean motion"
                 },
                 {
                     "name": "MEAN_MOTION_DOT",
-                    "short": "First derivative of mean motion",
-                    "type": "`$NUMBER`"
+                    "title": "Mean Motion Dot",
+                    "type": "`$NUMBER`",
+                    "short": "First derivative of mean motion"
                 },
                 {
                     "name": "NORAD_CAT_ID",
-                    "short": "NORAD catalog number",
-                    "type": "`$INTEGER`"
+                    "title": "Norad Cat Id",
+                    "type": "`$INTEGER`",
+                    "short": "NORAD catalog number"
                 },
                 {
                     "name": "OBJECT_ID",
-                    "short": "International designator",
-                    "type": "`$STRING`"
+                    "title": "Object Id",
+                    "type": "`$STRING`",
+                    "short": "International designator"
                 },
                 {
                     "name": "OBJECT_NAME",
-                    "short": "Name of the space object",
-                    "type": "`$STRING`"
+                    "title": "Object Name",
+                    "type": "`$STRING`",
+                    "short": "Name of the space object"
                 },
                 {
                     "name": "RA_OF_ASC_NODE",
-                    "short": "Right ascension of ascending node in degrees",
-                    "type": "`$NUMBER`"
+                    "title": "Ra Of Asc Node",
+                    "type": "`$NUMBER`",
+                    "short": "Right ascension of ascending node in degrees"
                 },
                 {
                     "name": "REV_AT_EPOCH",
-                    "short": "Revolution number at epoch",
-                    "type": "`$INTEGER`"
+                    "title": "Rev At Epoch",
+                    "type": "`$INTEGER`",
+                    "short": "Revolution number at epoch"
                 }
             ],
             "name": "gpn",
@@ -206,45 +216,6 @@ class Config {
                     "name": "list",
                     "points": [
                         {
-                            "args": {
-                                "query": [
-                                    {
-                                        "example": "25544",
-                                        "kind": "query",
-                                        "name": "catnr",
-                                        "orig": "catnr",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "example": "json",
-                                        "kind": "query",
-                                        "name": "format",
-                                        "orig": "format",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "example": "stations",
-                                        "kind": "query",
-                                        "name": "group",
-                                        "orig": "group",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "example": "1998-067A",
-                                        "kind": "query",
-                                        "name": "intde",
-                                        "orig": "intde",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "example": "ISS",
-                                        "kind": "query",
-                                        "name": "name",
-                                        "orig": "name",
-                                        "type": "`$STRING`"
-                                    }
-                                ]
-                            },
                             "kind": "http",
                             "method": "GET",
                             "orig": "/NORAD/elements/gp.php",
@@ -259,6 +230,55 @@ class Config {
                                     "lit": "gp.php"
                                 }
                             ],
+                            "parts": [
+                                "NORAD",
+                                "elements",
+                                "gp.php"
+                            ],
+                            "rename": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body`"
+                            },
+                            "args": {
+                                "query": [
+                                    {
+                                        "name": "catnr",
+                                        "orig": "catnr",
+                                        "type": "`$STRING`",
+                                        "kind": "query",
+                                        "example": "25544"
+                                    },
+                                    {
+                                        "name": "format",
+                                        "orig": "format",
+                                        "type": "`$STRING`",
+                                        "kind": "query",
+                                        "example": "json"
+                                    },
+                                    {
+                                        "name": "group",
+                                        "orig": "group",
+                                        "type": "`$STRING`",
+                                        "kind": "query",
+                                        "example": "stations"
+                                    },
+                                    {
+                                        "name": "intde",
+                                        "orig": "intde",
+                                        "type": "`$STRING`",
+                                        "kind": "query",
+                                        "example": "1998-067A"
+                                    },
+                                    {
+                                        "name": "name",
+                                        "orig": "name",
+                                        "type": "`$STRING`",
+                                        "kind": "query",
+                                        "example": "ISS"
+                                    }
+                                ]
+                            },
                             "select": {
                                 "exist": [
                                     "catnr",
@@ -267,16 +287,7 @@ class Config {
                                     "intde",
                                     "name"
                                 ]
-                            },
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body`"
-                            },
-                            "parts": [
-                                "NORAD",
-                                "elements",
-                                "gp.php"
-                            ]
+                            }
                         }
                     ]
                 }

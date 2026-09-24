@@ -1,7 +1,7 @@
 // Typed models for the CelestrakGpData SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,23 +14,6 @@ import (
 
 // Gpn is the typed data model for the gpn entity.
 type Gpn struct {
-	ARGOFPERICENTER *float64 `json:"ARG_OF_PERICENTER,omitempty"`
-	BSTAR *float64 `json:"BSTAR,omitempty"`
-	CLASSIFICATIONTYPE *string `json:"CLASSIFICATION_TYPE,omitempty"`
-	ECCENTRICITY *float64 `json:"ECCENTRICITY,omitempty"`
-	ELEMENTSETNO *int `json:"ELEMENT_SET_NO,omitempty"`
-	EPHEMERISTYPE *int `json:"EPHEMERIS_TYPE,omitempty"`
-	EPOCH *string `json:"EPOCH,omitempty"`
-	INCLINATION *float64 `json:"INCLINATION,omitempty"`
-	MEANANOMALY *float64 `json:"MEAN_ANOMALY,omitempty"`
-	MEANMOTION *float64 `json:"MEAN_MOTION,omitempty"`
-	MEANMOTIONDDOT *float64 `json:"MEAN_MOTION_DDOT,omitempty"`
-	MEANMOTIONDOT *float64 `json:"MEAN_MOTION_DOT,omitempty"`
-	NORADCATID *int `json:"NORAD_CAT_ID,omitempty"`
-	OBJECTID *string `json:"OBJECT_ID,omitempty"`
-	OBJECTNAME *string `json:"OBJECT_NAME,omitempty"`
-	RAOFASCNODE *float64 `json:"RA_OF_ASC_NODE,omitempty"`
-	REVATEPOCH *int `json:"REV_AT_EPOCH,omitempty"`
 }
 
 // GpnListMatch is the typed request payload for Gpn.ListTyped.
